@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CEA231C9A07D80079CA56 /* AppDelegate.swift */; };
-		613CEA261C9A07D80079CA56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CEA251C9A07D80079CA56 /* ViewController.swift */; };
 		613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA271C9A07D80079CA56 /* Main.storyboard */; };
 		613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2A1C9A07D80079CA56 /* Assets.xcassets */; };
 		613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */; };
+		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
+		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		613CEA201C9A07D80079CA56 /* Aca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613CEA231C9A07D80079CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		613CEA251C9A07D80079CA56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		613CEA281C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		613CEA2A1C9A07D80079CA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		613CEA2D1C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		613CEA2F1C9A07D80079CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,13 @@
 		613CEA221C9A07D80079CA56 /* Aca */ = {
 			isa = PBXGroup;
 			children = (
+				61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */,
 				613CEA231C9A07D80079CA56 /* AppDelegate.swift */,
-				613CEA251C9A07D80079CA56 /* ViewController.swift */,
 				613CEA271C9A07D80079CA56 /* Main.storyboard */,
 				613CEA2A1C9A07D80079CA56 /* Assets.xcassets */,
 				613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */,
 				613CEA2F1C9A07D80079CA56 /* Info.plist */,
+				617481D81C9F8D1D005E14F9 /* RecordViewController.swift */,
 			);
 			path = Aca;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			files = (
 				613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */,
 				613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */,
+				61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */,
 				613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				613CEA261C9A07D80079CA56 /* ViewController.swift in Sources */,
 				613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */,
+				617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +289,7 @@
 				613CEA341C9A07D80079CA56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
