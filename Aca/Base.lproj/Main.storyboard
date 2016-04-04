@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DEL-zI-U5a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DEL-zI-U5a">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Song List-->
-        <scene sceneID="7RE-a2-C1b">
+        <scene sceneID="awk-09-LxS">
             <objects>
-                <tableViewController storyboardIdentifier="Song List" title="Song List" id="e48-X2-xRn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F0t-N6-v4C">
+                <tableViewController title="Song List" id="wx4-3c-oYf" customClass="SongListTableViewController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rxJ-GA-uTB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OhG-aW-Cn1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OU9-dN-AlK">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OhG-aW-Cn1" id="JqE-kp-B2j">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OU9-dN-AlK" id="q5o-vM-Pc9">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="e48-X2-xRn" id="ZAQ-WW-1Dv"/>
-                            <outlet property="delegate" destination="e48-X2-xRn" id="gOT-LV-tnT"/>
+                            <outlet property="dataSource" destination="wx4-3c-oYf" id="bQz-iT-POa"/>
+                            <outlet property="delegate" destination="wx4-3c-oYf" id="14c-4R-KPu"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Song List" image="SongListTabImage" id="PbL-9O-8lT"/>
+                    <tabBarItem key="tabBarItem" title="Song List" image="SongListTabImage" id="95n-bN-qVP"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wjc-eZ-TGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuc-xU-nOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="-558"/>
+            <point key="canvasLocation" x="884" y="-527"/>
         </scene>
         <!--Record-->
         <scene sceneID="8aK-xr-iHt">
@@ -48,9 +49,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-rS-n5T">
                                 <rect key="frame" x="227" y="138" width="146" height="145"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="145" id="EYS-Gk-a8h"/>
-                                    <constraint firstAttribute="width" constant="146" id="UQi-px-gC2"/>
+                                    <constraint firstAttribute="width" constant="146" id="Odf-uj-elr"/>
                                 </constraints>
                                 <state key="normal" title="Record Button" image="RecordButtonImage.png"/>
                                 <connections>
@@ -59,49 +60,87 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njc-X2-IW9">
-                                <rect key="frame" x="277" y="410" width="46" height="30"/>
+                                <rect key="frame" x="108" y="385" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Sv9-i9-EfE"/>
+                                    <constraint firstAttribute="width" constant="46" id="ZR1-9j-HzO"/>
                                 </constraints>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playRecord:" destination="CPh-zH-1ct" eventType="touchUpInside" id="gkK-0h-0Y9"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qKZ-ng-2IP">
+                                <rect key="frame" x="227" y="299" width="146" height="2"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-3k-fcO">
+                                <rect key="frame" x="442" y="385" width="57" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="HH1-1F-a1A"/>
+                                </constraints>
+                                <state key="normal" title="Discard"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZc-qg-G96">
+                                <rect key="frame" x="277" y="385" width="47" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Save"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="N7y-eS-qYs" firstAttribute="top" secondItem="njc-X2-IW9" secondAttribute="bottom" constant="111" id="6R9-a6-xYd"/>
-                            <constraint firstItem="njc-X2-IW9" firstAttribute="centerX" secondItem="0X0-rS-n5T" secondAttribute="centerX" id="OR0-lx-DvC"/>
-                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="gKr-ho-jko" secondAttribute="bottom" constant="118" id="XqH-Ml-bhY"/>
-                            <constraint firstItem="njc-X2-IW9" firstAttribute="centerX" secondItem="BQr-ks-WSZ" secondAttribute="centerX" id="ZGe-zH-q5q"/>
+                            <constraint firstItem="uZc-qg-G96" firstAttribute="top" secondItem="njc-X2-IW9" secondAttribute="top" id="7le-4V-2yC"/>
+                            <constraint firstItem="uZc-qg-G96" firstAttribute="centerX" secondItem="qKZ-ng-2IP" secondAttribute="centerX" id="8dz-tn-oTj"/>
+                            <constraint firstItem="njc-X2-IW9" firstAttribute="baseline" secondItem="9f7-3k-fcO" secondAttribute="baseline" id="KQL-F1-rNs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9f7-3k-fcO" secondAttribute="trailing" constant="81" id="QLL-wE-W42"/>
+                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="leading" secondItem="0X0-rS-n5T" secondAttribute="leading" id="eia-ui-iT3"/>
+                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="top" secondItem="0X0-rS-n5T" secondAttribute="bottom" constant="16" id="fyg-S5-9s9"/>
+                            <constraint firstItem="uZc-qg-G96" firstAttribute="centerX" secondItem="BQr-ks-WSZ" secondAttribute="centerX" id="nHL-ek-gCb"/>
+                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="centerY" secondItem="BQr-ks-WSZ" secondAttribute="centerY" id="nje-nt-pBt"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="trailing" secondItem="qKZ-ng-2IP" secondAttribute="trailing" id="nqn-kp-5gC"/>
+                            <constraint firstItem="njc-X2-IW9" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leadingMargin" constant="88" id="pyb-DV-3Qs"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="gKr-ho-jko" secondAttribute="bottom" constant="118" id="tlj-xB-1NB"/>
+                            <constraint firstItem="uZc-qg-G96" firstAttribute="top" secondItem="qKZ-ng-2IP" secondAttribute="bottom" constant="84" id="vWy-li-1X1"/>
+                            <constraint firstItem="N7y-eS-qYs" firstAttribute="top" secondItem="njc-X2-IW9" secondAttribute="bottom" constant="136" id="vhy-2W-RYa"/>
+                            <constraint firstItem="uZc-qg-G96" firstAttribute="bottom" secondItem="njc-X2-IW9" secondAttribute="bottom" id="zpP-TI-lTr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Record" image="RecordTabImage" id="heA-oV-nhj"/>
+                    <connections>
+                        <outlet property="recordButton" destination="0X0-rS-n5T" id="GHb-ok-Nyi"/>
+                        <outlet property="recordProgress" destination="qKZ-ng-2IP" id="Guf-T7-eOq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2u-M7-Pdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="0EQ-Dd-fnr"/>
             </objects>
-            <point key="canvasLocation" x="884" y="189"/>
+            <point key="canvasLocation" x="884" y="183"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="KYs-gA-SJ8">
+        <scene sceneID="o5i-vE-E66">
             <objects>
-                <viewController storyboardIdentifier="Settings" id="v87-wx-LnQ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bs8-Ev-o0Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="zh7-zI-aCO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w4a-QI-3dR">
+                <tableViewController title="Settings" id="A3g-FV-33f" customClass="SettingsTableViewController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYA-fl-vug">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsTabImage" id="YTf-mF-iaX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XeQ-ub-CrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DIr-CA-hx5">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIr-CA-hx5" id="vdi-WE-nVO">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A3g-FV-33f" id="IMp-sc-yH6"/>
+                            <outlet property="delegate" destination="A3g-FV-33f" id="oLW-zQ-dpd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsTabImage" id="R9C-om-lQ1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTf-U6-GUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="966"/>
+            <point key="canvasLocation" x="884" y="943"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sm4-G2-7kU">
@@ -113,14 +152,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="e48-X2-xRn" kind="relationship" relationship="viewControllers" id="yc1-jJ-vcO"/>
+                        <segue destination="wx4-3c-oYf" kind="relationship" relationship="viewControllers" id="Nj3-8d-Pug"/>
                         <segue destination="CPh-zH-1ct" kind="relationship" relationship="viewControllers" id="s4x-QQ-Hh9"/>
-                        <segue destination="v87-wx-LnQ" kind="relationship" relationship="viewControllers" id="PAt-fG-Kgy"/>
+                        <segue destination="A3g-FV-33f" kind="relationship" relationship="viewControllers" id="jvo-Ob-Zoa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbo-Nf-v8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="189"/>
+            <point key="canvasLocation" x="122" y="183"/>
         </scene>
     </scenes>
     <resources>

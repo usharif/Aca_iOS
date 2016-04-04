@@ -13,9 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Sets initial tab as index 1
+        if self.window!.rootViewController as? UITabBarController != nil {
+            let tabBarController = self.window!.rootViewController as! UITabBarController
+            tabBarController.selectedIndex = 1
+        }
+
+        
         return true
     }
 
