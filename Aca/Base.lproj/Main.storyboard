@@ -1,38 +1,117 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DEL-zI-U5a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DEL-zI-U5a">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Song List-->
-        <scene sceneID="7RE-a2-C1b">
+        <!--Root View Controller-->
+        <scene sceneID="tkZ-7c-6NP">
             <objects>
-                <tableViewController storyboardIdentifier="Song List" title="Song List" id="e48-X2-xRn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="F0t-N6-v4C">
+                <tableViewController id="DOW-Bk-LSI" customClass="SongListController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="UhL-p7-OuN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OhG-aW-Cn1">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" rowHeight="60" id="lmN-Bh-qWZ" customClass="SongCell" customModule="Aca" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OhG-aW-Cn1" id="JqE-kp-B2j">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lmN-Bh-qWZ" id="lj1-1F-lCx">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-0O-bAT">
+                                            <rect key="frame" x="279" y="19" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fbe-0O-bAT" firstAttribute="centerX" secondItem="lj1-1F-lCx" secondAttribute="centerX" id="j7z-bw-4bp"/>
+                                        <constraint firstItem="fbe-0O-bAT" firstAttribute="centerY" secondItem="lj1-1F-lCx" secondAttribute="centerY" id="r5a-nB-cY1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songName" destination="fbe-0O-bAT" id="rSQ-nY-nXG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="e48-X2-xRn" id="ZAQ-WW-1Dv"/>
-                            <outlet property="delegate" destination="e48-X2-xRn" id="gOT-LV-tnT"/>
+                            <outlet property="dataSource" destination="DOW-Bk-LSI" id="jJL-p9-MQ8"/>
+                            <outlet property="delegate" destination="DOW-Bk-LSI" id="7cX-9e-HcZ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Song List" image="SongListTabImage" id="PbL-9O-8lT"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="0H2-8q-iPP"/>
+                    <connections>
+                        <segue destination="b1U-kh-Xlq" kind="push" identifier="toIdeas" id="8e0-WS-Zkd"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wjc-eZ-TGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vIx-Hs-HG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884" y="-558"/>
+            <point key="canvasLocation" x="1705" y="-556"/>
+        </scene>
+        <!--Idea List Controller-->
+        <scene sceneID="6DI-qp-xj7">
+            <objects>
+                <tableViewController id="b1U-kh-Xlq" customClass="IdeaListController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="DRW-qN-NYz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ideaCell" rowHeight="60" id="p2p-ri-nXq" customClass="IdeaCell" customModule="Aca" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p2p-ri-nXq" id="1lK-Vy-ggJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dV-fl-L5a">
+                                            <rect key="frame" x="279" y="19" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0dV-fl-L5a" firstAttribute="centerY" secondItem="1lK-Vy-ggJ" secondAttribute="centerY" id="cY8-ru-hiG"/>
+                                        <constraint firstItem="0dV-fl-L5a" firstAttribute="centerX" secondItem="1lK-Vy-ggJ" secondAttribute="centerX" id="vlV-Wc-uxE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ideaName" destination="0dV-fl-L5a" id="1jG-bU-510"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b1U-kh-Xlq" id="Ynx-w9-h7C"/>
+                            <outlet property="delegate" destination="b1U-kh-Xlq" id="zKh-7R-jUM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ps1-fn-g8R"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoM-UO-nD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2419" y="-556"/>
+        </scene>
+        <!--Song List-->
+        <scene sceneID="HiP-4y-QEZ">
+            <objects>
+                <navigationController id="2U6-wU-I1J" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Song List" id="8kO-cY-LXD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fSp-T8-SWV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DOW-Bk-LSI" kind="relationship" relationship="rootViewController" id="QjO-l1-FqS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZgA-RU-seZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="-556"/>
         </scene>
         <!--Record-->
         <scene sceneID="8aK-xr-iHt">
@@ -113,20 +192,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="e48-X2-xRn" kind="relationship" relationship="viewControllers" id="yc1-jJ-vcO"/>
+                        <segue destination="2U6-wU-I1J" kind="relationship" relationship="viewControllers" id="1y8-Bb-0iy"/>
                         <segue destination="CPh-zH-1ct" kind="relationship" relationship="viewControllers" id="s4x-QQ-Hh9"/>
                         <segue destination="v87-wx-LnQ" kind="relationship" relationship="viewControllers" id="PAt-fG-Kgy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbo-Nf-v8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="189"/>
+            <point key="canvasLocation" x="104" y="189"/>
         </scene>
     </scenes>
     <resources>
-        <image name="RecordButtonImage.png" width="380" height="380"/>
+        <image name="RecordButtonImage.png" width="200" height="200"/>
         <image name="RecordTabImage" width="25" height="25"/>
         <image name="SettingsTabImage" width="25" height="25"/>
-        <image name="SongListTabImage" width="25" height="25"/>
     </resources>
 </document>

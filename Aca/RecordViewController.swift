@@ -22,6 +22,20 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     @IBAction func EndRecord(sender: AnyObject) {
         audioRecorder.stop()
+        
+        // code borrowed from Stack Overflow
+        let alert = UIAlertController(title: "Idea Name", message: "Name Your Idea", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.text = "Some default text."
+        })
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let textField = alert.textFields![0] as UITextField
+            print("Text field: \(textField.text)")
+        }))
+        alert.addAction(UIAlertAction(title: "CANCEL", style: .Default, handler: { (action) -> Void in
+            //do nothing
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func playRecord(sender: AnyObject) {
@@ -54,7 +68,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         [AVEncoderAudioQualityKey: AVAudioQuality.Min.rawValue,
             AVEncoderBitRateKey: 16,
             AVNumberOfChannelsKey: 2,
-            AVSampleRateKey: 44100.0]
+            AVSampleRateKey: 44100.0 ]
         
         do {
             audioRecorder = try AVAudioRecorder(URL: getFileURL(),
