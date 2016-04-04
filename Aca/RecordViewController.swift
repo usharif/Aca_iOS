@@ -77,7 +77,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         [AVEncoderAudioQualityKey: AVAudioQuality.Min.rawValue,
             AVEncoderBitRateKey: 16,
             AVNumberOfChannelsKey: 2,
-            AVSampleRateKey: 44100.0]
+            AVSampleRateKey: 44100.0 ]
         
         do {
             audioRecorder = try AVAudioRecorder(URL: getFileURL(),

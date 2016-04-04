@@ -21,7 +21,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OU9-dN-AlK" id="q5o-vM-Pc9">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dV-fl-L5a">
+                                            <rect key="frame" x="279" y="19" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0dV-fl-L5a" firstAttribute="centerY" secondItem="1lK-Vy-ggJ" secondAttribute="centerY" id="cY8-ru-hiG"/>
+                                        <constraint firstItem="0dV-fl-L5a" firstAttribute="centerX" secondItem="1lK-Vy-ggJ" secondAttribute="centerX" id="vlV-Wc-uxE"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ideaName" destination="0dV-fl-L5a" id="1jG-bU-510"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -163,9 +178,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RecordButtonImage.png" width="380" height="380"/>
+        <image name="RecordButtonImage.png" width="200" height="200"/>
         <image name="RecordTabImage" width="25" height="25"/>
         <image name="SettingsTabImage" width="25" height="25"/>
-        <image name="SongListTabImage" width="25" height="25"/>
     </resources>
 </document>

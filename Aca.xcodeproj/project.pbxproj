@@ -54,6 +54,7 @@
 		613CEA171C9A07D80079CA56 = {
 			isa = PBXGroup;
 			children = (
+				31AD49391CB32B8900FF13D2 /* TableViewController.swift */,
 				613CEA221C9A07D80079CA56 /* Aca */,
 				613CEA211C9A07D80079CA56 /* Products */,
 			);
@@ -74,6 +75,10 @@
 				61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */,
 				613CEA231C9A07D80079CA56 /* AppDelegate.swift */,
 				613CEA271C9A07D80079CA56 /* Main.storyboard */,
+				31AD49371CB0AE5D00FF13D2 /* IdeaListController.swift */,
+				31AD49351CB0AE3700FF13D2 /* IdeaCell.swift */,
+				31AD49331CB0A58D00FF13D2 /* SongCell.swift */,
+				31AD49311CB0A52600FF13D2 /* SongListController.swift */,
 				613CEA2A1C9A07D80079CA56 /* Assets.xcassets */,
 				613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */,
 				613CEA2F1C9A07D80079CA56 /* Info.plist */,
