@@ -11,6 +11,7 @@
 		31AD49341CB0A58D00FF13D2 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49331CB0A58D00FF13D2 /* SongCell.swift */; };
 		31AD49361CB0AE3700FF13D2 /* IdeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49351CB0AE3700FF13D2 /* IdeaCell.swift */; };
 		31AD49381CB0AE5D00FF13D2 /* IdeaListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49371CB0AE5D00FF13D2 /* IdeaListController.swift */; };
+		31AD493A1CB32B8900FF13D2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49391CB32B8900FF13D2 /* TableViewController.swift */; };
 		613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CEA231C9A07D80079CA56 /* AppDelegate.swift */; };
 		613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA271C9A07D80079CA56 /* Main.storyboard */; };
 		613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2A1C9A07D80079CA56 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		31AD49331CB0A58D00FF13D2 /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		31AD49351CB0AE3700FF13D2 /* IdeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaCell.swift; sourceTree = "<group>"; };
 		31AD49371CB0AE5D00FF13D2 /* IdeaListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaListController.swift; sourceTree = "<group>"; };
+		31AD49391CB32B8900FF13D2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		613CEA201C9A07D80079CA56 /* Aca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613CEA231C9A07D80079CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		613CEA281C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		613CEA171C9A07D80079CA56 = {
 			isa = PBXGroup;
 			children = (
+				31AD49391CB32B8900FF13D2 /* TableViewController.swift */,
 				613CEA221C9A07D80079CA56 /* Aca */,
 				613CEA211C9A07D80079CA56 /* Products */,
 			);
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AD49381CB0AE5D00FF13D2 /* IdeaListController.swift in Sources */,
+				31AD493A1CB32B8900FF13D2 /* TableViewController.swift in Sources */,
 				31AD49341CB0A58D00FF13D2 /* SongCell.swift in Sources */,
 				31AD49321CB0A52600FF13D2 /* SongListController.swift in Sources */,
 				31AD49361CB0AE3700FF13D2 /* IdeaCell.swift in Sources */,
