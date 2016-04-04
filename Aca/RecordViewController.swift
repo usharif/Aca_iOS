@@ -20,7 +20,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     var timer = NSTimer()
-    var collection =  Collection()
+    //var collection =  Collection()
     
     //Outlets
     @IBOutlet weak var recordButton: UIButton!
