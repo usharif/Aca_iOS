@@ -31,7 +31,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         audioRecorder.record()
         
         //Updating progress bar after time interval of specific time
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target:self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target:self, selector: #selector(RecordViewController.updateProgress), userInfo: nil, repeats: true)
         
         //Change button when held
         recordButton.setImage(STOP_RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
