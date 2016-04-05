@@ -15,6 +15,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     var audioPlayer: AVAudioPlayer!
     
+   
+    @IBOutlet weak var playButton: UIButton!
     
     @IBAction func StartRecord(sender: AnyObject) {
         audioRecorder.record()
@@ -38,6 +40,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    
     @IBAction func playRecord(sender: AnyObject) {
         preparePlayer()
         audioPlayer.play()
@@ -46,9 +49,20 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
+        playButton.alpha = 0.0
+        playButton.enabled = false
+        
+        
+        configureButton()
+        
 
     }
-    
+    func configureButton(){
+        playButton.layer.cornerRadius = 0.5 * playButton.bounds.size.width
+        playButton.layer.borderColor = UIColor.whiteColor().CGColor as CGColorRef
+        playButton.layer.borderWidth = 2.0
+        playButton.clipsToBounds = true
+    }
     func getFileURL () -> NSURL {
         let dirPaths =
         NSSearchPathForDirectoriesInDomains(.DocumentDirectory,

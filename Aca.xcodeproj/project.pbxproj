@@ -16,7 +16,7 @@
 		613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2A1C9A07D80079CA56 /* Assets.xcassets */; };
 		613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */; };
 		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
-		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
+		61B9DF051C9C1A2B00541940 /* RecordButtonImage in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		613CEA2D1C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		613CEA2F1C9A07D80079CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
+		61B9DF041C9C1A2B00541940 /* RecordButtonImage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RecordButtonImage; path = /Users/Patron/Desktop/CS506/AcaApp/RecordButtonImage; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		613CEA221C9A07D80079CA56 /* Aca */ = {
 			isa = PBXGroup;
 			children = (
-				61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */,
+				61B9DF041C9C1A2B00541940 /* RecordButtonImage */,
 				613CEA231C9A07D80079CA56 /* AppDelegate.swift */,
 				613CEA271C9A07D80079CA56 /* Main.storyboard */,
 				31AD49371CB0AE5D00FF13D2 /* IdeaListController.swift */,
@@ -140,7 +140,7 @@
 			files = (
 				613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */,
 				613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */,
-				61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */,
+				61B9DF051C9C1A2B00541940 /* RecordButtonImage in Resources */,
 				613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

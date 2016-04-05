@@ -14,7 +14,10 @@ class SongListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.blueColor().CGColor, UIColor.whiteColor().CGColor]
+        self.view.layer.insertSublayer(gradient, atIndex: 0)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
