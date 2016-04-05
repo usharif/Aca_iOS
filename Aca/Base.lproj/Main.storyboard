@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Song List-->
         <scene sceneID="KyR-7P-C4d">
             <objects>
-                <tableViewController id="YYH-gA-eQr" customClass="SongListController2" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Song List" title="Song List" id="YYH-gA-eQr" customClass="SongListController2" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="bog-ea-pTy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,10 +44,7 @@
                             <outlet property="delegate" destination="YYH-gA-eQr" id="slH-cG-g0V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="p7H-9L-7NA"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="isP-TW-YRk">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
+                    <navigationItem key="navigationItem" title="Song List" id="Ihv-tr-wd6"/>
                     <connections>
                         <segue destination="ucO-RB-s1J" kind="push" identifier="toIdeas" id="rbB-Hu-TYB"/>
                     </connections>
@@ -56,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1704" y="-662"/>
         </scene>
-        <!--Idea List Controller2-->
+        <!--Idea List-->
         <scene sceneID="H1i-nF-vBd">
             <objects>
-                <tableViewController id="ucO-RB-s1J" customClass="IdeaListController2" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Idea List" id="ucO-RB-s1J" customClass="IdeaListController2" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="a7J-5d-owU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,10 +91,7 @@
                             <outlet property="delegate" destination="ucO-RB-s1J" id="CeQ-sj-kKr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="JYC-sX-JR8"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="LAF-33-Jrd">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
+                    <navigationItem key="navigationItem" title="Idea List" id="JYC-sX-JR8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDg-bf-kTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +100,7 @@
         <!--Song Library-->
         <scene sceneID="2fF-af-r0d">
             <objects>
-                <navigationController id="Bdw-FT-4oa" sceneMemberID="viewController">
+                <navigationController id="Bdw-FT-4oa" customClass="LibraryController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Song Library" image="SongListTabImage" id="50I-v9-Qnt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cjk-OM-9bT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -207,7 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DIr-CA-hx5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCell" id="DIr-CA-hx5">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIr-CA-hx5" id="vdi-WE-nVO">
