@@ -242,7 +242,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RecordButtonImage.png" width="200" height="200"/>
+        <image name="RecordButtonImage.png" width="256" height="256"/>
         <image name="RecordTabImage" width="25" height="25"/>
         <image name="SettingsTabImage" width="25" height="25"/>
     </resources>

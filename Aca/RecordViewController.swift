@@ -56,6 +56,10 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         super.viewDidLoad()
         setupRecorder()
         recordProgress.setProgress(0, animated: true)
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.blueColor().CGColor, UIColor.whiteColor().CGColor]
+        self.view.layer.insertSublayer(gradient, atIndex: 0)
     }
     
     func getFileURL () -> NSURL {
