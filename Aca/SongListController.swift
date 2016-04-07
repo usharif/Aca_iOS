@@ -1,25 +1,27 @@
-//
 //  SongListController.swift
 //  Aca
 //
-//  Created by patron on 4/2/16.
+//  Created by patron on 4/4/16.
 //  Copyright © 2016 Umair Sharif. All rights reserved.
 //
 
 import UIKit
 
 class SongListController: UITableViewController {
-    
-    var songList : [String] = ["song 1","song 2", "song 3"];
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +38,7 @@ class SongListController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return songList.count
+        return arrayOfSongs.count
     }
 
     
@@ -44,8 +46,7 @@ class SongListController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("songCell", forIndexPath: indexPath) as! SongCell
 
         // Configure the cell...
-        
-        cell.songName.text = songList[indexPath.row]
+        cell.songName.text = arrayOfSongs[indexPath.item].name
 
         return cell
     }

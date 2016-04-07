@@ -1,16 +1,13 @@
-//
 //  IdeaListController.swift
 //  Aca
 //
-//  Created by patron on 4/2/16.
+//  Created by patron on 4/4/16.
 //  Copyright © 2016 Umair Sharif. All rights reserved.
 //
 
 import UIKit
 
 class IdeaListController: UITableViewController {
-    
-    var ideaList : [String] = ["Idea 1","Idea 2","Idea 3"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +33,7 @@ class IdeaListController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ideaList.count
+        return 1
     }
 
     
@@ -45,7 +42,7 @@ class IdeaListController: UITableViewController {
 
         // Configure the cell...
         
-        cell.ideaName.text = ideaList[indexPath.row]
+        cell.ideaName.text = "goodbye"
 
         return cell
     }

@@ -6,21 +6,20 @@
 //  Copyright © 2016 Umair Sharif. All rights reserved.
 //
 
-//import Foundation
-//
-//class Idea {
-//    var name: String
-//    var isEnabled: Bool
-//    
-////    var instrument: String
-////    var sound: AVAudio
-//    
-//    var isRepeat: Bool
-//    var volume: Double
-//    var assocText: String
-//    
-//    init(name: String){
-//        self.name = name
-//    }
-//    
-//}
+import Foundation
+
+class Idea: RecordedAudio {
+    var name: String
+    //var parentSong: Song
+    //var isEnabled: Bool
+    //var isRepeat: Bool
+    //var volume: Double
+    //var assocText: String
+    var recordedAudio : RecordedAudio
+    
+    init(name: String, recordedAudio: RecordedAudio){
+        self.name = name
+        self.recordedAudio = recordedAudio
+    }
+    
+}
