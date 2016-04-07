@@ -9,7 +9,13 @@
 import UIKit
 
 class SongListController2: UITableViewController {
-
+    
+    var index = 0
+    
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+    
+    var size : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +24,7 @@ class SongListController2: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.refreshControl?.addTarget(self, action: #selector(SongListController2.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +41,16 @@ class SongListController2: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        
+        do {
+            let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(dirPaths[0])
+            
+            size = directoryContents
+        } catch {
+            
+        }
+        
+        return size.count
     }
 
     
@@ -42,13 +58,22 @@ class SongListController2: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("songCell", forIndexPath: indexPath) as! SongCell2
 
         // Configure the cell...
-        cell.songName.text = "hello"
+        cell.songName.text = size[indexPath.row]
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        index = indexPath.row
         performSegueWithIdentifier("toIdeas", sender: self)
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
 
@@ -87,14 +112,17 @@ class SongListController2: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
+        let destinationVC = segue.destinationViewController as! IdeaListController2
+        
         // Pass the selected object to the new view controller.
+        destinationVC.song = size[index]
     }
-    */
+    
 
 }

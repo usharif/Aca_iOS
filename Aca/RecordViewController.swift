@@ -11,6 +11,10 @@ import AVFoundation
 
 class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
+    var dummy = ""
+    
+    var dummy2 = ""
+    
     //Class constants
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
 
@@ -45,6 +49,35 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         
         //Change button when let go
         recordButton.setImage(RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
+        
+        let alert = UIAlertController(title: "Name the Song", message: "Enter a Song Name", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            //textField.text = "ex: Panda or Pt. 2"
+        })
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+            let textField = alert.textFields![0] as UITextField
+            self.dummy = textField.text!
+            self.createSongDirectory()
+            let alert1 = UIAlertController(title: "Name this Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
+            alert1.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                //textField.text = "ex: Panda or Pt. 2"
+            })
+            alert1.addAction(UIAlertAction(title: "Save", style: .Default, handler: { (action) -> Void in
+                let textField = alert1.textFields![0] as UITextField
+                self.dummy2 = textField.text!
+                self.createIdeaDirectory()
+            }))
+            alert1.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
+                
+            }))
+            self.presentViewController(alert1, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
+            
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func playRecord(sender: AnyObject) {
@@ -59,9 +92,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     }
     
     func getFileURL () -> NSURL {
-        let dirPaths =
-        NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-            .UserDomainMask, true)
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         
         let docsDir = dirPaths[0]
         let soundFilePath = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
@@ -69,6 +100,28 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
         return soundFileURL
         
+    }
+    
+    func createSongDirectory () {
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let docsDir = dirPaths[0]
+        let newDir = docsDir.stringByAppendingString("/"+dummy)
+        do{
+            try NSFileManager.defaultManager().createDirectoryAtPath(newDir, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            
+        }
+    }
+    
+    func createIdeaDirectory () {
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let docsDir = dirPaths[0]
+        let newDir = docsDir.stringByAppendingString("/"+dummy+"/"+dummy2)
+        do{
+            try NSFileManager.defaultManager().createDirectoryAtPath(newDir, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            
+        }
     }
     
     func setupRecorder () {

@@ -9,6 +9,12 @@
 import UIKit
 
 class IdeaListController2: UITableViewController {
+    
+    var song = ""
+    
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+    
+    var size : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,7 @@ class IdeaListController2: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.refreshControl?.addTarget(self, action: #selector(IdeaListController2.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +41,17 @@ class IdeaListController2: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        
+        do {
+            let docsDir = dirPaths[0]
+            let newDir = docsDir.stringByAppendingString("/"+song)
+            let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(newDir)
+            size = directoryContents
+        } catch {
+            
+        }
+        
+        return size.count
     }
 
     
@@ -43,9 +60,17 @@ class IdeaListController2: UITableViewController {
 
         // Configure the cell...
         
-        cell.ideaName.text = "goodbye"
+        cell.ideaName.text = size[indexPath.row]
 
         return cell
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
 
