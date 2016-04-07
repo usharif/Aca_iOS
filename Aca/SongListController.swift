@@ -6,9 +6,25 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SongListController: UITableViewController {
 
+    var indexOfSong: Int!
+    var audioPlayer: AVAudioPlayer!
+    
+    @IBAction func playButton(sender: AnyObject){
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: arrayOfSongs[indexOfSong].recordedAudio.filePathURL)
+        } catch {
+            
+        }
+        audioPlayer.prepareToPlay()
+        audioPlayer.volume = 1.0
+        audioPlayer.play()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +63,7 @@ class SongListController: UITableViewController {
 
         // Configure the cell...
         cell.songName.text = arrayOfSongs[indexPath.item].name
+        indexOfSong = indexPath.item
 
         return cell
     }

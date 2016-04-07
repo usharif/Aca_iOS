@@ -11,18 +11,24 @@ import AVFoundation
 
 class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
-    //Class constants
+    /* Class constants */
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
     let STOP_RECORD_BUTTON_IMAGE = UIImage.init(named: "StopRecordButtonImage.png")
     
-    //Class variables
+    /* Class variables */
+    //Audio recorder and player
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
+    
+    //Timer for progress bar
     var timer = NSTimer()
+    
+    //Variables for saving purposes
     var recordedAudio: RecordedAudio!
     var newSong: Song!
     var newIdea: Idea!
     
+    /* UIAlert controller & actions */
     var alertController = UIAlertController(title: "Recording saved!", message: "Please name your recording and choose a type", preferredStyle: .Alert)
     var songChoiceAction = UIAlertAction(title: "Song", style: UIAlertActionStyle.Default) {
      UIAlertAction in
@@ -31,12 +37,12 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         UIAlertAction in
     }
     
-    //Outlets
+    /* Interface Builder outlets */
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var recordProgress: UIProgressView!
     var alertTextField: UITextField!
     
-    //Actions
+    /* Interface Builder actions */
     @IBAction func StartRecord(sender: AnyObject) {
         audioRecorder.record()
         

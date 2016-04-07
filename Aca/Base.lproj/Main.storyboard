@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lqv-6O-azo" id="S62-JT-BEc">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV2-r7-HTz">
@@ -28,10 +28,22 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJV-Qf-IPL">
+                                            <rect key="frame" x="515" y="15" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="46" id="I6M-ph-X1s"/>
+                                            </constraints>
+                                            <state key="normal" title="Play"/>
+                                            <connections>
+                                                <action selector="playButton:" destination="YYH-gA-eQr" eventType="touchUpInside" id="zHH-MY-onB"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="oV2-r7-HTz" firstAttribute="centerX" secondItem="S62-JT-BEc" secondAttribute="centerX" id="B8q-ay-UJh"/>
-                                        <constraint firstItem="oV2-r7-HTz" firstAttribute="centerY" secondItem="S62-JT-BEc" secondAttribute="centerY" id="Wjf-VD-TNa"/>
+                                        <constraint firstItem="oV2-r7-HTz" firstAttribute="centerY" secondItem="S62-JT-BEc" secondAttribute="centerY" id="12F-0I-SIS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rJV-Qf-IPL" secondAttribute="trailing" constant="31" id="ELd-OD-1UJ"/>
+                                        <constraint firstItem="oV2-r7-HTz" firstAttribute="baseline" secondItem="rJV-Qf-IPL" secondAttribute="baseline" id="m3a-uS-p74"/>
+                                        <constraint firstItem="oV2-r7-HTz" firstAttribute="centerX" secondItem="S62-JT-BEc" secondAttribute="centerX" id="xqC-Tj-9mt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -130,7 +142,9 @@
                                 <rect key="frame" x="227" y="138" width="146" height="145"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="Odf-uj-elr"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="kcB-yF-gR5"/>
+                                    <constraint firstAttribute="width" constant="146" id="rTZ-rC-sAT"/>
+                                    <constraint firstAttribute="height" constant="145" id="vw8-ff-mdo"/>
                                 </constraints>
                                 <state key="normal" title="Record Button" image="RecordButtonImage.png"/>
                                 <connections>
@@ -139,10 +153,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njc-X2-IW9">
-                                <rect key="frame" x="108" y="385" width="46" height="30"/>
+                                <rect key="frame" x="277" y="347" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="ZR1-9j-HzO"/>
+                                    <constraint firstAttribute="height" constant="30" id="eXk-0A-vax"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playRecord:" destination="CPh-zH-1ct" eventType="touchUpInside" id="gkK-0h-0Y9"/>
@@ -150,19 +165,12 @@
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qKZ-ng-2IP">
                                 <rect key="frame" x="227" y="299" width="146" height="2"/>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-3k-fcO">
-                                <rect key="frame" x="442" y="385" width="57" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="57" id="HH1-1F-a1A"/>
+                                    <constraint firstAttribute="height" constant="2" id="3lP-ag-FUc"/>
                                 </constraints>
-                                <state key="normal" title="Discard"/>
-                                <connections>
-                                    <action selector="discardButton:" destination="CPh-zH-1ct" eventType="touchUpInside" id="nDY-UR-omo"/>
-                                </connections>
-                            </button>
+                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZc-qg-G96">
-                                <rect key="frame" x="277" y="385" width="47" height="30"/>
+                                <rect key="frame" x="276" y="430" width="47" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -172,20 +180,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uZc-qg-G96" firstAttribute="top" secondItem="njc-X2-IW9" secondAttribute="top" id="7le-4V-2yC"/>
-                            <constraint firstItem="uZc-qg-G96" firstAttribute="centerX" secondItem="qKZ-ng-2IP" secondAttribute="centerX" id="8dz-tn-oTj"/>
-                            <constraint firstItem="njc-X2-IW9" firstAttribute="baseline" secondItem="9f7-3k-fcO" secondAttribute="baseline" id="KQL-F1-rNs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9f7-3k-fcO" secondAttribute="trailing" constant="81" id="QLL-wE-W42"/>
-                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="leading" secondItem="0X0-rS-n5T" secondAttribute="leading" id="eia-ui-iT3"/>
-                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="top" secondItem="0X0-rS-n5T" secondAttribute="bottom" constant="16" id="fyg-S5-9s9"/>
-                            <constraint firstItem="uZc-qg-G96" firstAttribute="centerX" secondItem="BQr-ks-WSZ" secondAttribute="centerX" id="nHL-ek-gCb"/>
-                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="centerY" secondItem="BQr-ks-WSZ" secondAttribute="centerY" id="nje-nt-pBt"/>
-                            <constraint firstItem="0X0-rS-n5T" firstAttribute="trailing" secondItem="qKZ-ng-2IP" secondAttribute="trailing" id="nqn-kp-5gC"/>
-                            <constraint firstItem="njc-X2-IW9" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leadingMargin" constant="88" id="pyb-DV-3Qs"/>
-                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="gKr-ho-jko" secondAttribute="bottom" constant="118" id="tlj-xB-1NB"/>
-                            <constraint firstItem="uZc-qg-G96" firstAttribute="top" secondItem="qKZ-ng-2IP" secondAttribute="bottom" constant="84" id="vWy-li-1X1"/>
-                            <constraint firstItem="N7y-eS-qYs" firstAttribute="top" secondItem="njc-X2-IW9" secondAttribute="bottom" constant="136" id="vhy-2W-RYa"/>
-                            <constraint firstItem="uZc-qg-G96" firstAttribute="bottom" secondItem="njc-X2-IW9" secondAttribute="bottom" id="zpP-TI-lTr"/>
+                            <constraint firstItem="qKZ-ng-2IP" firstAttribute="top" secondItem="0X0-rS-n5T" secondAttribute="bottom" constant="16" id="2Qb-7E-bWb"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="trailing" secondItem="qKZ-ng-2IP" secondAttribute="trailing" id="3T5-SV-o7X"/>
+                            <constraint firstItem="njc-X2-IW9" firstAttribute="trailing" secondItem="uZc-qg-G96" secondAttribute="trailing" id="3xF-Wn-LO4"/>
+                            <constraint firstItem="N7y-eS-qYs" firstAttribute="top" secondItem="uZc-qg-G96" secondAttribute="bottom" constant="91" id="5Ar-dh-AhX"/>
+                            <constraint firstItem="njc-X2-IW9" firstAttribute="centerX" secondItem="uZc-qg-G96" secondAttribute="centerX" id="5wi-St-9fe"/>
+                            <constraint firstItem="njc-X2-IW9" firstAttribute="centerX" secondItem="qKZ-ng-2IP" secondAttribute="centerX" id="Kt4-lZ-I9i"/>
+                            <constraint firstItem="uZc-qg-G96" firstAttribute="top" secondItem="njc-X2-IW9" secondAttribute="bottom" constant="53" id="nMg-cf-WNE"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="centerX" secondItem="BQr-ks-WSZ" secondAttribute="centerX" id="sia-vx-ROo"/>
+                            <constraint firstItem="njc-X2-IW9" firstAttribute="top" secondItem="qKZ-ng-2IP" secondAttribute="bottom" constant="46" id="soM-hm-o5I"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="leading" secondItem="qKZ-ng-2IP" secondAttribute="leading" id="y4x-VL-Sur"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="gKr-ho-jko" secondAttribute="bottom" constant="118" id="yRG-VF-BTG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Record" image="RecordTabImage" id="heA-oV-nhj"/>
