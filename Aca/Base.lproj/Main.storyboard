@@ -44,7 +44,17 @@
                             <outlet property="delegate" destination="YYH-gA-eQr" id="slH-cG-g0V"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" id="s5g-V2-gVh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hJt-sA-IJM">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                            </button>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Song List" id="Ihv-tr-wd6"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="uQM-Q2-xY0">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>

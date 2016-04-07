@@ -9,6 +9,10 @@
 import UIKit
 
 class SongCell2: UITableViewCell {
+    
+    let filemgr = NSFileManager.defaultManager()
+    
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
 
     override func awakeFromNib() {
         super.awakeFromNib()
