@@ -64,13 +64,13 @@ class SongListController2: UITableViewController {
         
         do {
             let docsDir = self.dirPaths[0]
-            let newDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
-            do{
-                    try NSFileManager.defaultManager().removeItemAtPath(newDir)
-            } catch {
-                    
-                
-            }
+//            let newDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
+//            do{
+//                    try NSFileManager.defaultManager().removeItemAtPath(newDir)
+//            } catch {
+//                    
+//                
+//            }
             let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
             size = directoryContents
                 
