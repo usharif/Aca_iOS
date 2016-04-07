@@ -66,6 +66,15 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                 let textField = alert1.textFields![0] as UITextField
                 self.dummy2 = textField.text!
                 self.createIdeaDirectory()
+                let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                let docsDir = dirPaths[0]
+                let oldDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
+                let newDir = docsDir.stringByAppendingString("/"+self.dummy+"/"+self.dummy2)
+                do {
+                    try NSFileManager.defaultManager().moveItemAtPath(oldDir, toPath: newDir)
+                } catch {
+                    
+                }
             }))
             alert1.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
                 

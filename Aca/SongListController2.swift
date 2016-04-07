@@ -16,6 +16,26 @@ class SongListController2: UITableViewController {
     
     var size : [String] = []
     
+    @IBAction func deleteSong(sender: AnyObject) {
+        let alert1 = UIAlertController(title: "DELETE", message: "Enter the song you'd like to delete.", preferredStyle: .Alert)
+        alert1.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            //textField.text = "ex: Panda or Pt. 2"
+        })
+        alert1.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (action) -> Void in
+            let textField = alert1.textFields![0] as UITextField
+            let docsDir = self.dirPaths[0] 
+            let newDir = (docsDir as NSString).stringByAppendingPathComponent(textField.text!)
+            do{
+                try NSFileManager.defaultManager().removeItemAtPath(newDir)
+            } catch {
+                
+            }
+        }))
+        alert1.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
+            
+        }))
+        self.presentViewController(alert1, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
