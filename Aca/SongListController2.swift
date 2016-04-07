@@ -63,9 +63,18 @@ class SongListController2: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         
         do {
-            let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(dirPaths[0])
-            
+            let docsDir = self.dirPaths[0]
+            let newDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
+            do{
+                    try NSFileManager.defaultManager().removeItemAtPath(newDir)
+            } catch {
+                    
+                
+            }
+            let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
             size = directoryContents
+                
+            
         } catch {
             
         }

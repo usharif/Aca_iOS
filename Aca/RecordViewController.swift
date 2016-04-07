@@ -11,6 +11,8 @@ import AVFoundation
 
 class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
+    var dum = 0
+    
     var dummy = ""
     
     var dummy2 = ""
@@ -56,8 +58,20 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         })
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
+            let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let docsDir = dirPaths[0]
+            do{
+                let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
+                if dir.contains(textField.text!) {
+                    self.dum = 1
+                }
+            } catch {
+                
+            }
             self.dummy = textField.text!
-            self.createSongDirectory()
+            if self.dum == 0 {
+                self.createSongDirectory()
+            }
             let alert1 = UIAlertController(title: "Name this Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
             alert1.addTextFieldWithConfigurationHandler({ (textField) -> Void in
                 //textField.text = "ex: Panda or Pt. 2"
@@ -69,7 +83,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                 let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
                 let docsDir = dirPaths[0]
                 let oldDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
-                let newDir = docsDir.stringByAppendingString("/"+self.dummy+"/"+self.dummy2)
+                let newDir = docsDir.stringByAppendingString("/"+self.dummy+"/"+self.dummy2+"/sound.caf")
                 do {
                     try NSFileManager.defaultManager().moveItemAtPath(oldDir, toPath: newDir)
                 } catch {
@@ -89,11 +103,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         
     }
     
-    @IBAction func playRecord(sender: AnyObject) {
-        preparePlayer()
-        audioPlayer.play()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
@@ -107,6 +116,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         let soundFilePath = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
         
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+        
         return soundFileURL
         
     }

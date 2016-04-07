@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
-class IdeaListController2: UITableViewController {
+class IdeaListController2: UITableViewController, AVAudioPlayerDelegate {
+    
+    var play = ""
+    
+    var audioPlayer: AVAudioPlayer!
     
     var song = ""
     
@@ -71,6 +76,30 @@ class IdeaListController2: UITableViewController {
         
         self.tableView.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+    func preparePlayer () {
+        do {
+            let soundFileURL = NSURL(fileURLWithPath: play)
+            audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+        } catch {
+            
+        }
+        
+        audioPlayer.delegate = self
+        audioPlayer.prepareToPlay()
+        audioPlayer.volume = 1.0
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let docsDir = dirPaths[0]
+        let newDir = docsDir.stringByAppendingString("/"+song)
+        let newDir1 = (newDir as NSString).stringByAppendingPathComponent(size[indexPath.row])
+        let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
+        play = newDir2
+        preparePlayer()
+        audioPlayer.play()
     }
     
 
