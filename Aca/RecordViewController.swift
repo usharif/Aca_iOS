@@ -13,6 +13,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     var dum = 0
     
+    var dum2 = 0
+    
     var dummy = ""
     
     var dummy2 = ""
@@ -54,7 +56,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         
         let alert = UIAlertController(title: "Name the Song", message: "Enter a Song Name", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-            //textField.text = "ex: Panda or Pt. 2"
+            
         })
         alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
             let textField = alert.textFields![0] as UITextField
@@ -69,28 +71,76 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                 
             }
             self.dummy = textField.text!
+            if self.dummy.containsString("/") {
+                let alert2 = UIAlertController(title: "Not so Fast!", message: "Song Name Cannot Contain a Forward Slash(/)", preferredStyle: .Alert)
+                alert2.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                    self.dum = 0
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }))
+                self.presentViewController(alert2, animated: true, completion: nil)
+                self.dum = 1
+            }
             if self.dum == 0 {
                 self.createSongDirectory()
             }
-            let alert1 = UIAlertController(title: "Name this Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
+            let alert1 = UIAlertController(title: "Name This Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
             alert1.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                //textField.text = "ex: Panda or Pt. 2"
+                
             })
             alert1.addAction(UIAlertAction(title: "Save", style: .Default, handler: { (action) -> Void in
                 let textField = alert1.textFields![0] as UITextField
-                self.dummy2 = textField.text!
-                self.createIdeaDirectory()
                 let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
                 let docsDir = dirPaths[0]
-                let oldDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
-                let newDir = docsDir.stringByAppendingString("/"+self.dummy+"/"+self.dummy2+"/sound.caf")
-                do {
-                    try NSFileManager.defaultManager().moveItemAtPath(oldDir, toPath: newDir)
+                let newDir = docsDir.stringByAppendingString("/"+self.dummy)
+                do{
+                    let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(newDir)
+                    //if idea name already exists
+                    if dir.contains(textField.text!) {
+                        let alert4 = UIAlertController(title: "Not so Fast!", message: "Idea Name Already Exists in Song", preferredStyle: .Alert)
+                        alert4.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                            self.dum2 = 0
+                            self.presentViewController(alert1, animated: true, completion: nil)
+                        }))
+                        self.presentViewController(alert4, animated: true, completion: nil)
+                        self.dum2 = 1
+                    }
                 } catch {
                     
                 }
+                self.dummy2 = textField.text!
+                if self.dummy2.containsString("/") {
+                    let alert3 = UIAlertController(title: "Not so Fast!", message: "Idea Name Cannot Contain a Forward Slash (/)", preferredStyle: .Alert)
+                    alert3.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                        self.dum2 = 0
+                        self.presentViewController(alert1, animated: true, completion: nil)
+                    }))
+                    self.presentViewController(alert3, animated: true, completion: nil)
+                    self.dum2 = 1
+                }
+                if self.dum2 == 0 {
+                    self.createIdeaDirectory()
+                    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                    let docsDir = dirPaths[0]
+                    let oldDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
+                    let newDir = docsDir.stringByAppendingString("/"+self.dummy+"/"+self.dummy2+"/sound.caf")
+                    do {
+                        try NSFileManager.defaultManager().moveItemAtPath(oldDir, toPath: newDir)
+                    } catch {
+                        
+                    }
+                }
             }))
             alert1.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
+                if self.dum == 0 {
+                    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                    let docsDir = dirPaths[0]
+                    let newDir = (docsDir as NSString).stringByAppendingPathComponent(self.dummy)
+                    do{
+                        try NSFileManager.defaultManager().removeItemAtPath(newDir)
+                    } catch {
+                    
+                    }
+                }
                 
             }))
             self.presentViewController(alert1, animated: true, completion: nil)
