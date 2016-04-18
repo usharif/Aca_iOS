@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		61066F6F1CA332030031EF4A /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = ../Song.swift; sourceTree = "<group>"; };
-		6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StopRecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/StopRecordButtonImage/StopRecordButtonImage.png"; sourceTree = "<group>"; };
+		6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StopRecordButtonImage.png; path = ../../../Downloads/StopRecordButtonImage.png; sourceTree = "<group>"; };
 		613CEA201C9A07D80079CA56 /* Aca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613CEA231C9A07D80079CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		613CEA281C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		61AB6BEE1CA73035004464E7 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		61AB6BF01CA73D1A004464E7 /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
-		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
+		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = ../../../Downloads/RecordButtonImage.png; sourceTree = "<group>"; };
 		61D5C9E81CB33BC80071BA54 /* IdeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaCell.swift; sourceTree = "<group>"; };
 		61D5C9E91CB33BC80071BA54 /* IdeaListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaListController.swift; sourceTree = "<group>"; };
 		61D5C9EA1CB33BC80071BA54 /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };

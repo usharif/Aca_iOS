@@ -14,6 +14,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     /* Class constants */
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
     let STOP_RECORD_BUTTON_IMAGE = UIImage.init(named: "StopRecordButtonImage.png")
+    let gradient: CAGradientLayer = CAGradientLayer()
+    var checker = true
+    
     
     /* Class variables */
     //Audio recorder and player
@@ -77,8 +80,14 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor.blueColor().CGColor, UIColor.whiteColor().CGColor]
+        var timer: NSTimer = NSTimer()
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "backgroundChanger", userInfo: nil, repeats: true)
+        
         setupRecorder()
         recordProgress.setProgress(0, animated: true)
 
@@ -90,7 +99,52 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
             handler: {(alert: UIAlertAction!) in self.createNewIdea(self.alertTextField.text!)}))
         alertController.addTextFieldWithConfigurationHandler(configurationTextField)
     }
+    func backgroundChanger(){
+        let components: CGColorRef = gradient.colors![0] as! CGColorRef
+        if(checker == true){
+            let floaters = CGColorGetComponents(components)
+            let rede = (Double(floaters[0]) + 0.01)
+            let greene = (Double(floaters[1]) + 0.01)
+            let bluee = (Double(floaters[2]) + 0.01)
+            let swiftColor = UIColor(red: CGFloat(rede), green: CGFloat(greene), blue: CGFloat(bluee), alpha: 1)
+
+
+        let components2: CGColorRef = gradient.colors![1] as! CGColorRef
+            let floaters2 = CGColorGetComponents(components2)
+            let rede2 = (Double(floaters2[0]) + 0.001)
+            let greene2 = (Double(floaters2[1]) + 0.001)
+            let bluee2 = (Double(floaters2[2]) + 0.001)
+            let swiftColor2 = UIColor(red: CGFloat(rede2), green: CGFloat(greene2), blue: CGFloat(bluee2), alpha: 1)
+        
+        gradient.colors![0] = swiftColor.CGColor
+        self.view.layer.insertSublayer(gradient, atIndex: 0)
+            if(floaters[0] == 1){
+                checker = false
+            }
+        }
+        else{
+                let floaters = CGColorGetComponents(components)
+                let rede = (Double(floaters[0]) - 0.01)
+                let greene = (Double(floaters[1]) - 0.01)
+                let bluee = (Double(floaters[2]) - 0.01)
+                let swiftColor = UIColor(red: CGFloat(rede), green: CGFloat(greene), blue: CGFloat(bluee), alpha: 1)
+                
+                
+                let components2: CGColorRef = gradient.colors![1] as! CGColorRef
+                let floaters2 = CGColorGetComponents(components2)
+                let rede2 = (Double(floaters2[0]) - 0.01)
+                let greene2 = (Double(floaters2[1]) - 0.01)
+                let bluee2 = (Double(floaters2[2]) - 0.01)
+                let swiftColor2 = UIColor(red: CGFloat(rede2), green: CGFloat(greene2), blue: CGFloat(bluee2), alpha: 1)
+                
+                gradient.colors![0] = swiftColor.CGColor
+                self.view.layer.insertSublayer(gradient, atIndex: 0)
+            if(floaters[0] == 0){
+                checker = true
+            }
+        }
     
+    }
     func configurationTextField(textField: UITextField!) {
         self.alertTextField = textField!
     }
@@ -134,6 +188,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         audioRecorder.delegate = self
         audioRecorder.prepareToRecord()
     }
+    
     
     func preparePlayer () {
         do {
