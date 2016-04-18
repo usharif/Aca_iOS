@@ -85,7 +85,6 @@ class IdeaListController2: UITableViewController, AVAudioPlayerDelegate {
         } catch {
             
         }
-        
         audioPlayer.delegate = self
         audioPlayer.prepareToPlay()
         audioPlayer.volume = 1.0
@@ -98,6 +97,7 @@ class IdeaListController2: UITableViewController, AVAudioPlayerDelegate {
         let newDir1 = (newDir as NSString).stringByAppendingPathComponent(size[indexPath.row])
         let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
         play = newDir2
+        print(play)
         preparePlayer()
         audioPlayer.play()
     }
