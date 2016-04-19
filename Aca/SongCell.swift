@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SongCell2: UITableViewCell {
+class SongCell: UITableViewCell {
     
     let filemgr = NSFileManager.defaultManager()
     
