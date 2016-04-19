@@ -316,9 +316,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         // We dismiss the alert. Here you can add your additional code to execute when cancel is pressed
     }
     
-    
-    
-    
     /*
      // MARK: - Navigation
      

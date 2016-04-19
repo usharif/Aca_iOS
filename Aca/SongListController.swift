@@ -23,7 +23,7 @@ class SongListController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: #selector(SongListController2.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(SongListController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,7 +64,7 @@ class SongListController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("songCell", forIndexPath: indexPath) as! SongCell2
+        let cell = tableView.dequeueReusableCellWithIdentifier("songCell", forIndexPath: indexPath) as! SongCell
         
         // Configure the cell...
         cell.songName.text = size[indexPath.row]
@@ -135,7 +135,7 @@ class SongListController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        let destinationVC = segue.destinationViewController as! IdeaListController2
+        let destinationVC = segue.destinationViewController as! IdeaListController
         
         // Pass the selected object to the new view controller.
         destinationVC.song = size[index]

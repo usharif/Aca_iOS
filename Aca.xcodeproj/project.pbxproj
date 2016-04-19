@@ -22,7 +22,6 @@
 		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
 		61AB6BEF1CA73035004464E7 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BEE1CA73035004464E7 /* Collection.swift */; };
 		61AB6BF11CA73D1A004464E7 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BF01CA73D1A004464E7 /* Idea.swift */; };
-		61AB6BF31CA75110004464E7 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BF21CA75110004464E7 /* Recorder.swift */; };
 		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		61AB6BEE1CA73035004464E7 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		61AB6BF01CA73D1A004464E7 /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
-		61AB6BF21CA75110004464E7 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 				61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */,
 				61AB6BEE1CA73035004464E7 /* Collection.swift */,
 				61AB6BF01CA73D1A004464E7 /* Idea.swift */,
-				61AB6BF21CA75110004464E7 /* Recorder.swift */,
 			);
 			path = Aca;
 			sourceTree = "<group>";
@@ -184,7 +181,6 @@
 				617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */,
 				31AD493C1CB335F800FF13D2 /* SongListController.swift in Sources */,
 				61066F701CA332030031EF4A /* Song.swift in Sources */,
-				61AB6BF31CA75110004464E7 /* Recorder.swift in Sources */,
 				31AD49421CB337A400FF13D2 /* IdeaCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
