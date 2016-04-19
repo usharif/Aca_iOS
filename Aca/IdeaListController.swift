@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class IdeaListController2: UITableViewController, AVAudioPlayerDelegate {
+class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
     var play = ""
     
