@@ -9,7 +9,15 @@
 import UIKit
 import AVFoundation
 
-class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var dum = 0
+    
+    var dum2 = 0
+    
+    var dummy = ""
+    
+    var dummy2 = ""
     
     //Class constants
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
@@ -19,9 +27,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     var timer = NSTimer()
-    var dum = 0
-    var dummy = ""
-    var dummy2 = ""
     
     //Outlets
     @IBOutlet weak var recordButton: UIButton!
@@ -48,39 +53,73 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         //Change button when let go
         recordButton.setImage(RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
         
-        let songAlert = UIAlertController(title: "Recording Saved!", message: "Add to previous song or create new song?", preferredStyle: .Alert)
-        songAlert.addAction(UIAlertAction(title: "Add to Song", style: .Default, handler: { (action) -> Void in
-            //choose from list of current songs
-        }))
+        let songAlert = UIAlertController(title: "Recording saved!", message: "Create new song or add to previous song?", preferredStyle: .Alert)
         
-        songAlert.addAction(UIAlertAction(title: "New song", style: .Default, handler: {(action) -> Void in
-            let newSongAlert = UIAlertController(title: "Song created!", message: "Please name your song", preferredStyle: .Alert)
+        songAlert.addAction(UIAlertAction(title: "New song", style: .Default, handler: { (action) -> Void in
+            let newSongAlert = UIAlertController(title: "Name the Song", message: "Enter a Song Name", preferredStyle: .Alert)
             newSongAlert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                newSongAlert.addAction(UIAlertAction(title: "Save", style: .Default, handler: {(action) -> Void in
-                    let textField = newSongAlert.textFields![0] as UITextField
+                
+            })
+            newSongAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                let textField = newSongAlert.textFields![0] as UITextField
+                let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                let docsDir = dirPaths[0]
+                do{
+                    let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
+                    if dir.contains(textField.text!) {
+                        self.dum = 1
+                    }
+                } catch {
+                    
+                }
+                self.dummy = textField.text!
+                if self.dummy.containsString("/") {
+                    let songNameErrorAlert = UIAlertController(title: "Not so Fast!", message: "Song Name Cannot Contain a Forward Slash(/)", preferredStyle: .Alert)
+                    songNameErrorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                        self.dum = 0
+                        self.presentViewController(newSongAlert, animated: true, completion: nil)
+                    }))
+                    self.presentViewController(songNameErrorAlert, animated: true, completion: nil)
+                    self.dum = 1
+                }
+                if self.dum == 0 {
+                    self.createSongDirectory()
+                }
+                let ideaAlert = UIAlertController(title: "Name This Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
+                ideaAlert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+                    
+                })
+                ideaAlert.addAction(UIAlertAction(title: "Save", style: .Default, handler: { (action) -> Void in
+                    let textField = ideaAlert.textFields![0] as UITextField
                     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
                     let docsDir = dirPaths[0]
+                    let newDir = docsDir.stringByAppendingString("/"+self.dummy)
                     do{
-                        let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
+                        let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(newDir)
+                        //if idea name already exists
                         if dir.contains(textField.text!) {
-                            self.dum = 1
+                            let ideaAlreadyExistsErrorAlert = UIAlertController(title: "Not so Fast!", message: "Idea Name Already Exists in Song", preferredStyle: .Alert)
+                            ideaAlreadyExistsErrorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                                self.dum2 = 0
+                                self.presentViewController(ideaAlert, animated: true, completion: nil)
+                            }))
+                            self.presentViewController(ideaAlreadyExistsErrorAlert, animated: true, completion: nil)
+                            self.dum2 = 1
                         }
                     } catch {
                         
                     }
-                    self.dummy = textField.text!
-                    if self.dum == 0 {
-                        self.createSongDirectory()
+                    self.dummy2 = textField.text!
+                    if self.dummy2.containsString("/") {
+                        let ideaNameErrorAlert = UIAlertController(title: "Not so Fast!", message: "Idea Name Cannot Contain a Forward Slash (/)", preferredStyle: .Alert)
+                        ideaNameErrorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                            self.dum2 = 0
+                            self.presentViewController(ideaAlert, animated: true, completion: nil)
+                        }))
+                        self.presentViewController(ideaNameErrorAlert, animated: true, completion: nil)
+                        self.dum2 = 1
                     }
-                    
-                    let ideaAlert = UIAlertController(title: "Name this Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
-                    ideaAlert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
-                        //textField.text = "ex: Panda or Pt. 2"
-                    })
-                    
-                    ideaAlert.addAction(UIAlertAction(title: "Save", style: .Default, handler: { (action) -> Void in
-                        let textField = ideaAlert.textFields![0] as UITextField
-                        self.dummy2 = textField.text!
+                    if self.dum2 == 0 {
                         self.createIdeaDirectory()
                         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
                         let docsDir = dirPaths[0]
@@ -91,24 +130,38 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
                         } catch {
                             
                         }
-                    }))
-                    ideaAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
-                        
-                    }))
-                    self.presentViewController(ideaAlert, animated: true, completion: nil)
+                    }
+                }))
+                ideaAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+                    if self.dum == 0 {
+                        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                        let docsDir = dirPaths[0]
+                        let newDir = (docsDir as NSString).stringByAppendingPathComponent(self.dummy)
+                        do{
+                            try NSFileManager.defaultManager().removeItemAtPath(newDir)
+                        } catch {
+                            
+                        }
+                    }
                     
                 }))
-                newSongAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
-                }))
-                self.presentViewController(newSongAlert, animated: true, completion: nil)
-            })
+                self.presentViewController(ideaAlert, animated: true, completion: nil)
+            }))
             
+            newSongAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+            }))
+            
+            self.presentViewController(newSongAlert, animated: true, completion: nil)
         }))
-        songAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action) -> Void in
+        
+        songAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: {(action) -> Void in
         }))
+        
+        songAlert.addAction(UIAlertAction(title: "Add to previous song", style: .Default, handler: { (action) -> Void in
+            self.showPickerInActionSheet()
+        }))
+        
         self.presentViewController(songAlert, animated: true, completion: nil)
-        
-        
     }
     
     override func viewDidLoad() {
@@ -179,6 +232,91 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    func showPickerInActionSheet() {
+        let title = ""
+        let message = "\n\n\n\n\n\n\n\n\n\n";
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet);
+        alert.modalInPopover = true;
+        
+        
+        //Create a frame (placeholder/wrapper) for the picker and then create the picker
+        let pickerFrame: CGRect = CGRectMake(40, 52, 270, 100); // CGRectMake(left), top, width, height) - left and top are like margins
+        let picker: UIPickerView = UIPickerView(frame: pickerFrame);
+        
+        
+        //set the pickers datasource and delegate
+        picker.delegate = self;
+        picker.dataSource = self;
+        
+        //Add the picker to the alert controller
+        alert.view.addSubview(picker);
+        
+        //Create the toolbar view - the view witch will hold our 2 buttons
+        let toolFrame = CGRectMake(40, 5, 270, 45);
+        let toolView: UIView = UIView(frame: toolFrame);
+        
+        //add buttons to the view
+        let buttonCancelFrame: CGRect = CGRectMake(0, 7, 100, 30); //size & position of the button as placed on the toolView
+        
+        //Create the cancel button & set its title
+        let buttonCancel: UIButton = UIButton(frame: buttonCancelFrame);
+        buttonCancel.setTitle("Cancel", forState: UIControlState.Normal);
+        buttonCancel.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal);
+        toolView.addSubview(buttonCancel); //add it to the toolView
+        
+        //Add the target - target, function to call, the event witch will trigger the function call
+        buttonCancel.addTarget(self, action: #selector(RecordViewController.cancelSelection(_:)), forControlEvents: UIControlEvents.TouchDown);
+        
+        //add buttons to the view
+        let buttonChooseFrame: CGRect = CGRectMake(170, 7, 100, 30); //size & position of the button as placed on the toolView
+        
+        //Create the Select button & set the title
+        let buttonChoose: UIButton = UIButton(frame: buttonChooseFrame);
+        buttonChoose.setTitle("Select", forState: UIControlState.Normal);
+        buttonChoose.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal);
+        toolView.addSubview(buttonChoose); //add to the subview
+        
+        //Add the tartget. In my case I dynamicly set the target of the select button
+        buttonChoose.addTarget(self, action: #selector(RecordViewController.chooseSong(_:)), forControlEvents: UIControlEvents.TouchDown);
+        
+        //add the toolbar to the alert controller
+        alert.view.addSubview(toolView);
+        
+        self.presentViewController(alert, animated: true, completion: nil);
+    }
+    
+    func chooseSong(sender: UIButton){
+        // Your code when select button is tapped
+        print("im working")
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //number of songs
+        return size.count
+    }
+
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return size[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+       //Do something if selected
+    }
+    
+    func cancelSelection(sender: UIButton){
+        print("Cancel")
+        self.dismissViewControllerAnimated(true, completion: nil)
+        // We dismiss the alert. Here you can add your additional code to execute when cancel is pressed
+    }
+    
+    
     
     
     /*
