@@ -9,7 +9,7 @@
 import UIKit
 var size : [String] = []
 
-class SongListController2: UITableViewController {
+class SongListController: UITableViewController {
     
     var index = 0    
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
