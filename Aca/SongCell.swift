@@ -1,5 +1,5 @@
 //
-//  SongCell2.swift
+//  SongCell.swift
 //  Aca
 //
 //  Created by patron on 4/4/16.
