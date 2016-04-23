@@ -10,13 +10,13 @@
         <!--Song List-->
         <scene sceneID="KyR-7P-C4d">
             <objects>
-                <tableViewController storyboardIdentifier="Song List" title="Song List" id="YYH-gA-eQr" customClass="SongListController2" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Song List" title="Song List" id="YYH-gA-eQr" customClass="SongListController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="bog-ea-pTy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="songCell" rowHeight="60" id="Lqv-6O-azo" customClass="SongCell2" customModule="Aca" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="songCell" rowHeight="60" id="Lqv-6O-azo" customClass="SongCell" customModule="Aca" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lqv-6O-azo" id="S62-JT-BEc">
@@ -46,7 +46,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="7ib-4y-O57"/>
+                    <navigationItem key="navigationItem" title="Song List" id="7ib-4y-O57"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="uQM-Q2-xY0">
                         <autoresizingMask key="autoresizingMask"/>
@@ -62,13 +62,13 @@
         <!--Idea List-->
         <scene sceneID="H1i-nF-vBd">
             <objects>
-                <tableViewController title="Idea List" id="ucO-RB-s1J" customClass="IdeaListController2" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Idea List" id="ucO-RB-s1J" customClass="IdeaListController" customModule="Aca" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="a7J-5d-owU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ideaCell" rowHeight="60" id="U4Z-hl-zTg" customClass="IdeaCell2" customModule="Aca" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ideaCell" rowHeight="60" id="U4Z-hl-zTg" customClass="IdeaCell" customModule="Aca" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U4Z-hl-zTg" id="eRo-Cf-HqX">
