@@ -13,15 +13,14 @@
 		31AD49421CB337A400FF13D2 /* IdeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49411CB337A400FF13D2 /* IdeaCell.swift */; };
 		31AD49441CB4581D00FF13D2 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49431CB4581D00FF13D2 /* LibraryController.swift */; };
 		61066F6C1CA32EA30031EF4A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */; };
-		61066F701CA332030031EF4A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F6F1CA332030031EF4A /* Song.swift */; };
 		6108EB8E1CA329650077CCC3 /* StopRecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */; };
+		611261BC1CCF24C900C9941B /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611261BB1CCF24C900C9941B /* SCViewController.m */; };
+		611261BF1CCF24E000C9941B /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 611261BE1CCF24E000C9941B /* SCSiriWaveformView.m */; };
 		613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CEA231C9A07D80079CA56 /* AppDelegate.swift */; };
 		613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA271C9A07D80079CA56 /* Main.storyboard */; };
 		613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2A1C9A07D80079CA56 /* Assets.xcassets */; };
 		613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */; };
 		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
-		61AB6BEF1CA73035004464E7 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BEE1CA73035004464E7 /* Collection.swift */; };
-		61AB6BF11CA73D1A004464E7 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BF01CA73D1A004464E7 /* Idea.swift */; };
 		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +31,11 @@
 		31AD49411CB337A400FF13D2 /* IdeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaCell.swift; sourceTree = "<group>"; };
 		31AD49431CB4581D00FF13D2 /* LibraryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
 		61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		61066F6F1CA332030031EF4A /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = ../Song.swift; sourceTree = "<group>"; };
 		6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StopRecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/StopRecordButtonImage/StopRecordButtonImage.png"; sourceTree = "<group>"; };
+		611261BA1CCF24C900C9941B /* SCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCViewController.h; sourceTree = "<group>"; };
+		611261BB1CCF24C900C9941B /* SCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCViewController.m; sourceTree = "<group>"; };
+		611261BD1CCF24E000C9941B /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
+		611261BE1CCF24E000C9941B /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
 		613CEA201C9A07D80079CA56 /* Aca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613CEA231C9A07D80079CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		613CEA281C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,8 +43,6 @@
 		613CEA2D1C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		613CEA2F1C9A07D80079CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		61AB6BEE1CA73035004464E7 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		61AB6BF01CA73D1A004464E7 /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
 		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +76,10 @@
 		613CEA221C9A07D80079CA56 /* Aca */ = {
 			isa = PBXGroup;
 			children = (
+				611261BD1CCF24E000C9941B /* SCSiriWaveformView.h */,
+				611261BE1CCF24E000C9941B /* SCSiriWaveformView.m */,
+				611261BA1CCF24C900C9941B /* SCViewController.h */,
+				611261BB1CCF24C900C9941B /* SCViewController.m */,
 				6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */,
 				61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */,
 				613CEA231C9A07D80079CA56 /* AppDelegate.swift */,
@@ -89,10 +93,7 @@
 				613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */,
 				613CEA2F1C9A07D80079CA56 /* Info.plist */,
 				617481D81C9F8D1D005E14F9 /* RecordViewController.swift */,
-				61066F6F1CA332030031EF4A /* Song.swift */,
 				61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */,
-				61AB6BEE1CA73035004464E7 /* Collection.swift */,
-				61AB6BF01CA73D1A004464E7 /* Idea.swift */,
 			);
 			path = Aca;
 			sourceTree = "<group>";
@@ -171,16 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61AB6BF11CA73D1A004464E7 /* Idea.swift in Sources */,
+				611261BC1CCF24C900C9941B /* SCViewController.m in Sources */,
+				611261BF1CCF24E000C9941B /* SCSiriWaveformView.m in Sources */,
 				61066F6C1CA32EA30031EF4A /* SettingsTableViewController.swift in Sources */,
 				31AD49441CB4581D00FF13D2 /* LibraryController.swift in Sources */,
 				613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */,
-				61AB6BEF1CA73035004464E7 /* Collection.swift in Sources */,
 				31AD493E1CB3361D00FF13D2 /* SongCell.swift in Sources */,
 				31AD49401CB3371900FF13D2 /* IdeaListController.swift in Sources */,
 				617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */,
 				31AD493C1CB335F800FF13D2 /* SongListController.swift in Sources */,
-				61066F701CA332030031EF4A /* Song.swift in Sources */,
 				31AD49421CB337A400FF13D2 /* IdeaCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
