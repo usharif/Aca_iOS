@@ -26,29 +26,27 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     //Class variables
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
-    var timer = NSTimer()
+    
     
     //Outlets
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var recordProgress: UIProgressView!
+    @IBOutlet weak var waveForm: SCSiriWaveformView!
     
     //Actions
     @IBAction func StartRecord(sender: AnyObject) {
-        audioRecorder.record()
-        
-        //Updating progress bar after time interval of specific time
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target:self, selector: #selector(RecordViewController.updateProgress), userInfo: nil, repeats: true)
-        
+       audioRecorder.record()
+        waveForm.waveColor = UIColor.blueColor()
+
+        let displaylink = CADisplayLink(target: self, selector: NSSelectorFromString("updateMeters"))
+        displaylink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+
         //Change button when held
         recordButton.setImage(STOP_RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
     }
     
     @IBAction func EndRecord(sender: AnyObject) {
         audioRecorder.stop()
-        
-        //Resets timer and progress bar
-        timer.invalidate()
-        recordProgress.setProgress(0, animated: true)
+        waveForm.waveColor = UIColor.clearColor()
         
         //Change button when let go
         recordButton.setImage(RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
@@ -167,7 +165,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
-        recordProgress.setProgress(0, animated: true)
+    
+        
     }
     
     func getFileURL () -> NSURL {
@@ -205,7 +204,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     }
     
     func setupRecorder () {
-        
         let recordSettings =
             [AVEncoderAudioQualityKey: AVAudioQuality.Min.rawValue,
              AVEncoderBitRateKey: 16,
@@ -218,14 +216,16 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         } catch {
             
         }
-        
         audioRecorder.delegate = self
         audioRecorder.prepareToRecord()
-        
+        audioRecorder.meteringEnabled = true
     }
     
-    func updateProgress() {
-        recordProgress.progress += 0.0075
+    func updateMeters() {
+        var normalizedValue: CGFloat
+        audioRecorder.updateMeters()
+        normalizedValue = self.normalizedPowerLevelFromDecibels(CGFloat(audioRecorder.averagePowerForChannel(0)))
+        self.waveForm.updateWithLevel(normalizedValue)
     }
     
     override func didReceiveMemoryWarning() {
@@ -233,7 +233,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func normalizedPowerLevelFromDecibels(decibels: CGFloat) -> CGFloat {
+        if (decibels < -60.0 || decibels == 0.0) {
+            return 0.0;
+        }
+        
+        return CGFloat(powf((powf(10.0, 0.05 * float_t(decibels)) - powf(10.0, 0.05 * -60.0)) * (1.0 / (1.0 - powf(10.0, 0.05 * -60.0))), 1.0 / 2.0));
+    }
     
     func showPickerInActionSheet() {
         let title = ""
@@ -301,13 +307,13 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         //number of songs
         return size.count
     }
-
+    
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return size[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       //Do something if selected
+        //Do something if selected
     }
     
     func cancelSelection(sender: UIButton){

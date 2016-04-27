@@ -14,14 +14,13 @@
 		31AD49441CB4581D00FF13D2 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49431CB4581D00FF13D2 /* LibraryController.swift */; };
 		61066F6C1CA32EA30031EF4A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */; };
 		6108EB8E1CA329650077CCC3 /* StopRecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */; };
-		611261BC1CCF24C900C9941B /* SCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 611261BB1CCF24C900C9941B /* SCViewController.m */; };
-		611261BF1CCF24E000C9941B /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 611261BE1CCF24E000C9941B /* SCSiriWaveformView.m */; };
 		613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CEA231C9A07D80079CA56 /* AppDelegate.swift */; };
 		613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA271C9A07D80079CA56 /* Main.storyboard */; };
 		613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2A1C9A07D80079CA56 /* Assets.xcassets */; };
 		613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */; };
 		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
 		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
+		61BDCE1F1CD01A930008A83F /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +31,7 @@
 		31AD49431CB4581D00FF13D2 /* LibraryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
 		61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StopRecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/StopRecordButtonImage/StopRecordButtonImage.png"; sourceTree = "<group>"; };
-		611261BA1CCF24C900C9941B /* SCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCViewController.h; sourceTree = "<group>"; };
-		611261BB1CCF24C900C9941B /* SCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCViewController.m; sourceTree = "<group>"; };
-		611261BD1CCF24E000C9941B /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
-		611261BE1CCF24E000C9941B /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
+		611F83F81CD019A5001CAE3C /* Aca-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aca-Bridging-Header.h"; sourceTree = "<group>"; };
 		613CEA201C9A07D80079CA56 /* Aca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613CEA231C9A07D80079CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		613CEA281C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +40,8 @@
 		613CEA2F1C9A07D80079CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
+		61BDCE1D1CD01A930008A83F /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
+		61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +74,8 @@
 		613CEA221C9A07D80079CA56 /* Aca */ = {
 			isa = PBXGroup;
 			children = (
-				611261BD1CCF24E000C9941B /* SCSiriWaveformView.h */,
-				611261BE1CCF24E000C9941B /* SCSiriWaveformView.m */,
-				611261BA1CCF24C900C9941B /* SCViewController.h */,
-				611261BB1CCF24C900C9941B /* SCViewController.m */,
+				61BDCE1D1CD01A930008A83F /* SCSiriWaveformView.h */,
+				61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */,
 				6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */,
 				61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */,
 				613CEA231C9A07D80079CA56 /* AppDelegate.swift */,
@@ -94,6 +90,7 @@
 				613CEA2F1C9A07D80079CA56 /* Info.plist */,
 				617481D81C9F8D1D005E14F9 /* RecordViewController.swift */,
 				61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */,
+				611F83F81CD019A5001CAE3C /* Aca-Bridging-Header.h */,
 			);
 			path = Aca;
 			sourceTree = "<group>";
@@ -124,7 +121,7 @@
 		613CEA181C9A07D80079CA56 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Umair Sharif";
 				TargetAttributes = {
@@ -172,13 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				611261BC1CCF24C900C9941B /* SCViewController.m in Sources */,
-				611261BF1CCF24E000C9941B /* SCSiriWaveformView.m in Sources */,
 				61066F6C1CA32EA30031EF4A /* SettingsTableViewController.swift in Sources */,
 				31AD49441CB4581D00FF13D2 /* LibraryController.swift in Sources */,
 				613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */,
 				31AD493E1CB3361D00FF13D2 /* SongCell.swift in Sources */,
 				31AD49401CB3371900FF13D2 /* IdeaListController.swift in Sources */,
+				61BDCE1F1CD01A930008A83F /* SCSiriWaveformView.m in Sources */,
 				617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */,
 				31AD493C1CB335F800FF13D2 /* SongListController.swift in Sources */,
 				31AD49421CB337A400FF13D2 /* IdeaCell.swift in Sources */,
@@ -292,10 +288,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Aca/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.umair.Aca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Aca/Aca-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -303,10 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Aca/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.umair.Aca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Aca/Aca-Bridging-Header.h";
 			};
 			name = Release;
 		};
