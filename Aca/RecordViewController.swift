@@ -22,7 +22,9 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     //Class constants
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
     let STOP_RECORD_BUTTON_IMAGE = UIImage.init(named: "StopRecordButtonImage.png")
-    let WAVE_COLOR = UIColor(red: 160.0/255.0, green: 25.0/255.0, blue: 39.0/255.0, alpha: 1.0)
+    let WAVE_COLOR_START_RECORD = UIColor(red: 160.0/255.0, green: 25.0/255.0, blue: 39.0/255.0, alpha: 1.0)
+    let WAVE_COLOR_END_RECORD = UIColor(red:38.0/255.0, green:34.0/255.0, blue:97.0/255.0, alpha:1.0)
+    
     
     //Class variables
     var audioRecorder: AVAudioRecorder!
@@ -33,10 +35,11 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var waveForm: SCSiriWaveformView!
     
+    
     //Actions
     @IBAction func StartRecord(sender: AnyObject) {
        audioRecorder.record()
-        waveForm.waveColor = WAVE_COLOR
+        waveForm.waveColor = WAVE_COLOR_START_RECORD
 
         //Change button when held
         recordButton.setImage(STOP_RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
@@ -44,7 +47,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     @IBAction func EndRecord(sender: AnyObject) {
         audioRecorder.stop()
-        waveForm.waveColor = UIColor.clearColor()
+        waveForm.waveColor = WAVE_COLOR_END_RECORD
         
         //Change button when let go
         recordButton.setImage(RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
@@ -163,7 +166,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     override func viewDidLoad() {
         super.viewDidLoad()
         setupRecorder()
-    
+        
         let displaylink = CADisplayLink(target: self, selector: NSSelectorFromString("updateMeters"))
         displaylink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }

@@ -139,14 +139,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X0-rS-n5T">
-                                <rect key="frame" x="227" y="170" width="146" height="147"/>
+                                <rect key="frame" x="173" y="61" width="255" height="256"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="147" id="0Ko-Fn-0qO"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="147" id="40e-ch-gkb"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="146" id="5Xz-aR-Ook"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="IXK-vq-hxb"/>
+                                    <constraint firstAttribute="height" constant="256" id="NAG-Ac-QN0"/>
                                     <constraint firstAttribute="width" constant="146" id="Odf-uj-elr"/>
-                                    <constraint firstAttribute="width" constant="146" id="VKI-o3-dkz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="hGi-5J-bdN"/>
+                                    <constraint firstAttribute="width" constant="255" id="i0a-B9-Hxx"/>
                                 </constraints>
                                 <state key="normal" title="Record Button" image="RecordButtonImage.png"/>
                                 <variation key="default">
@@ -160,7 +160,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press and hold to + Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgE-BA-tSl">
-                                <rect key="frame" x="20" y="123" width="560" height="21"/>
+                                <rect key="frame" x="20" y="32" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -168,18 +168,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="BQr-ks-WSZ" secondAttribute="top" constant="170" id="2IN-ma-P3a"/>
-                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="qgE-BA-tSl" secondAttribute="bottom" constant="26" id="6HT-FY-BCb"/>
                             <constraint firstItem="0X0-rS-n5T" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leadingMargin" constant="207" id="C1W-a8-cOJ"/>
-                            <constraint firstItem="k1f-6Z-vIX" firstAttribute="top" secondItem="0X0-rS-n5T" secondAttribute="bottom" constant="8" symbolic="YES" id="FaT-vI-l27"/>
-                            <constraint firstItem="qgE-BA-tSl" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leadingMargin" id="Iwo-zz-zGr"/>
-                            <constraint firstItem="0X0-rS-n5T" firstAttribute="centerX" secondItem="k1f-6Z-vIX" secondAttribute="centerX" id="Owp-zT-m01"/>
-                            <constraint firstAttribute="bottom" secondItem="k1f-6Z-vIX" secondAttribute="bottom" id="auz-iZ-Qgl"/>
-                            <constraint firstItem="k1f-6Z-vIX" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leading" id="ioy-dW-9dd"/>
-                            <constraint firstItem="qgE-BA-tSl" firstAttribute="centerX" secondItem="0X0-rS-n5T" secondAttribute="centerX" id="lhD-eJ-ega"/>
+                            <constraint firstItem="k1f-6Z-vIX" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leading" id="EyU-zC-4ai"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="centerX" secondItem="k1f-6Z-vIX" secondAttribute="centerX" id="JEC-tI-Pwm"/>
+                            <constraint firstItem="k1f-6Z-vIX" firstAttribute="top" secondItem="0X0-rS-n5T" secondAttribute="bottom" constant="8" symbolic="YES" id="SCn-NL-sLj"/>
+                            <constraint firstItem="qgE-BA-tSl" firstAttribute="centerX" secondItem="0X0-rS-n5T" secondAttribute="centerX" id="bnm-Gr-QFw"/>
+                            <constraint firstAttribute="trailing" secondItem="k1f-6Z-vIX" secondAttribute="trailing" id="fQn-yX-dUI"/>
+                            <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="qgE-BA-tSl" secondAttribute="bottom" constant="8" symbolic="YES" id="jls-q6-JPq"/>
+                            <constraint firstItem="qgE-BA-tSl" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leadingMargin" id="kG3-CP-r7l"/>
                             <constraint firstItem="qgE-BA-tSl" firstAttribute="top" secondItem="0X0-rS-n5T" secondAttribute="bottom" constant="79" id="rE7-Tv-5MZ"/>
-                            <constraint firstAttribute="trailing" secondItem="k1f-6Z-vIX" secondAttribute="trailing" id="t2L-eY-bz7"/>
                             <constraint firstItem="0X0-rS-n5T" firstAttribute="top" secondItem="gKr-ho-jko" secondAttribute="bottom" constant="118" id="tlj-xB-1NB"/>
+                            <constraint firstItem="qgE-BA-tSl" firstAttribute="top" secondItem="gKr-ho-jko" secondAttribute="bottom" constant="12" id="u6S-HV-E3N"/>
+                            <constraint firstAttribute="bottom" secondItem="k1f-6Z-vIX" secondAttribute="bottom" id="w3G-BN-uOM"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

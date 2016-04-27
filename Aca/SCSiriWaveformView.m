@@ -46,7 +46,8 @@ static const CGFloat kDefaultSecondaryLineWidth = 1.0f;
 
 - (void)setup
 {
-	self.waveColor = [UIColor clearColor];
+    
+	self.waveColor = [UIColor colorWithRed:38.0/255.0 green:34.0/255.0 blue:97.0/255.0 alpha:1.0];
 	
 	self.frequency = kDefaultFrequency;
 	
