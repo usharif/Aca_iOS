@@ -22,6 +22,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     //Class constants
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
     let STOP_RECORD_BUTTON_IMAGE = UIImage.init(named: "StopRecordButtonImage.png")
+    let WAVE_COLOR = UIColor(red: 160.0/255.0, green: 25.0/255.0, blue: 39.0/255.0, alpha: 1.0)
     
     //Class variables
     var audioRecorder: AVAudioRecorder!
@@ -35,10 +36,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     //Actions
     @IBAction func StartRecord(sender: AnyObject) {
        audioRecorder.record()
-        waveForm.waveColor = UIColor.blueColor()
-
-        let displaylink = CADisplayLink(target: self, selector: NSSelectorFromString("updateMeters"))
-        displaylink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
+        waveForm.waveColor = WAVE_COLOR
 
         //Change button when held
         recordButton.setImage(STOP_RECORD_BUTTON_IMAGE, forState: UIControlState.Normal)
@@ -166,7 +164,8 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         super.viewDidLoad()
         setupRecorder()
     
-        
+        let displaylink = CADisplayLink(target: self, selector: NSSelectorFromString("updateMeters"))
+        displaylink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
     
     func getFileURL () -> NSURL {
