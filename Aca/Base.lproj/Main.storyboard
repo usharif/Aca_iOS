@@ -162,11 +162,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press and hold to + Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgE-BA-tSl">
                                 <rect key="frame" x="20" y="32" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.3411764705882353" green="0.73725490196078436" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0X0-rS-n5T" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leadingMargin" constant="207" id="C1W-a8-cOJ"/>
                             <constraint firstItem="k1f-6Z-vIX" firstAttribute="leading" secondItem="BQr-ks-WSZ" secondAttribute="leading" id="EyU-zC-4ai"/>
@@ -191,6 +191,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Record" image="RecordTabImage" id="heA-oV-nhj"/>
                     <connections>
+                        <outlet property="pressToRecordLabel" destination="qgE-BA-tSl" id="uw8-vp-JTC"/>
                         <outlet property="recordButton" destination="0X0-rS-n5T" id="GHb-ok-Nyi"/>
                         <outlet property="waveForm" destination="k1f-6Z-vIX" id="4Fb-5u-u9R"/>
                     </connections>
@@ -228,48 +229,6 @@
             </objects>
             <point key="canvasLocation" x="884" y="961"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="DaY-Bv-UFC">
-            <objects>
-                <viewController id="7IM-WU-NoP" customClass="SCViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u4I-W8-TfZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qb4-m2-WZH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="N6r-4j-XDe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tyt-1m-I2r">
-                                <rect key="frame" x="71" y="236" width="240" height="128"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-xb-rAq">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2S0-fu-hIE" customClass="SCSiriWaveformView">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="waveColor">
-                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="waveformView" destination="2S0-fu-hIE" id="WXa-eS-cvP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5HW-Bj-rHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1704" y="969"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sm4-G2-7kU">
             <objects>
@@ -291,7 +250,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="RecordButtonImage.png" width="380" height="380"/>
+        <image name="RecordButtonImage.png" width="381" height="381"/>
         <image name="RecordTabImage" width="25" height="25"/>
         <image name="SettingsTabImage" width="25" height="25"/>
         <image name="SongListTabImage" width="25" height="25"/>

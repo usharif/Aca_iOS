@@ -11,7 +11,7 @@ import AVFoundation
 
 class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
-    var play = ""
+    var filenameToPlay = ""
     
     var audioPlayer: AVAudioPlayer!
     
@@ -19,7 +19,7 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
     
-    var size : [String] = []
+    var arrayOfSongs : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +51,12 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
             let docsDir = dirPaths[0]
             let newDir = docsDir.stringByAppendingString("/"+song)
             let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(newDir)
-            size = directoryContents
+            arrayOfSongs = directoryContents
         } catch {
             
         }
         
-        return size.count
+        return arrayOfSongs.count
     }
 
     
@@ -65,7 +65,7 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
 
         // Configure the cell...
         
-        cell.ideaName.text = size[indexPath.row]
+        cell.ideaName.text = arrayOfSongs[indexPath.row]
 
         return cell
     }
@@ -80,7 +80,7 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
     func preparePlayer () {
         do {
-            let soundFileURL = NSURL(fileURLWithPath: play)
+            let soundFileURL = NSURL(fileURLWithPath: filenameToPlay)
             audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
         } catch {
             
@@ -94,10 +94,10 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let docsDir = dirPaths[0]
         let newDir = docsDir.stringByAppendingString("/"+song)
-        let newDir1 = (newDir as NSString).stringByAppendingPathComponent(size[indexPath.row])
+        let newDir1 = (newDir as NSString).stringByAppendingPathComponent(arrayOfSongs[indexPath.row])
         let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
-        play = newDir2
-        print(play)
+        filenameToPlay = newDir2
+        print(filenameToPlay)
         preparePlayer()
         audioPlayer.play()
     }

@@ -21,6 +21,7 @@
 		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
 		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
 		61BDCE1F1CD01A930008A83F /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */; };
+		61F370AE1CD295F800F3FB5C /* Aca3.png in Resources */ = {isa = PBXBuildFile; fileRef = 61F370AD1CD295F800F3FB5C /* Aca3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
 		61BDCE1D1CD01A930008A83F /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
 		61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
+		61F370AD1CD295F800F3FB5C /* Aca3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Aca3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		613CEA221C9A07D80079CA56 /* Aca */ = {
 			isa = PBXGroup;
 			children = (
+				61F370AD1CD295F800F3FB5C /* Aca3.png */,
 				61BDCE1D1CD01A930008A83F /* SCSiriWaveformView.h */,
 				61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */,
 				6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */,
@@ -157,6 +160,7 @@
 				6108EB8E1CA329650077CCC3 /* StopRecordButtonImage.png in Resources */,
 				613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */,
 				613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */,
+				61F370AE1CD295F800F3FB5C /* Aca3.png in Resources */,
 				61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */,
 				613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */,
 			);

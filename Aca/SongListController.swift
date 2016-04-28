@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var size : [String] = []
+var arrayOfSongNames : [String] = []
 
 class SongListController: UITableViewController {
     
@@ -50,16 +50,16 @@ class SongListController: UITableViewController {
             let docsDir = self.dirPaths[0]
             let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
             if directoryContents.contains("sound.caf"){
-                size = directoryContents
-                size.removeLast()
+                arrayOfSongNames = directoryContents
+                arrayOfSongNames.removeLast()
             } else {
-                size = directoryContents
+                arrayOfSongNames = directoryContents
             }
         } catch {
             
         }
         
-        return size.count
+        return arrayOfSongNames.count
     }
     
     
@@ -67,7 +67,7 @@ class SongListController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("songCell", forIndexPath: indexPath) as! SongCell
         
         // Configure the cell...
-        cell.songName.text = size[indexPath.row]
+        cell.songName.text = arrayOfSongNames[indexPath.row]
         
         return cell
     }
@@ -100,8 +100,8 @@ class SongListController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             let docsDir = self.dirPaths[0]
-            print("deleted "+size[indexPath.row])
-            let newDir = (docsDir as NSString).stringByAppendingPathComponent(size[indexPath.row])
+            print("deleted "+arrayOfSongNames[indexPath.row])
+            let newDir = (docsDir as NSString).stringByAppendingPathComponent(arrayOfSongNames[indexPath.row])
             do{
                 try NSFileManager.defaultManager().removeItemAtPath(newDir)
             } catch {
@@ -138,7 +138,7 @@ class SongListController: UITableViewController {
         let destinationVC = segue.destinationViewController as! IdeaListController
         
         // Pass the selected object to the new view controller.
-        destinationVC.song = size[index]
+        destinationVC.song = arrayOfSongNames[index]
     }
     
     
