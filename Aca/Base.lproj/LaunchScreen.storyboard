@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,18 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aca3.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQ0-KJ-tQv">
-                                <rect key="frame" x="80" y="287" width="441" height="26"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iQ0-KJ-tQv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="I1N-od-i1I"/>
-                            <constraint firstItem="iQ0-KJ-tQv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="267" id="TlY-Gw-Hfh"/>
-                            <constraint firstItem="iQ0-KJ-tQv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fnM-2E-JFK"/>
-                            <constraint firstItem="iQ0-KJ-tQv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="60" id="khn-mu-tix"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,7 +24,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Aca3.png" width="1458" height="619"/>
-    </resources>
 </document>

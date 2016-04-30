@@ -37,7 +37,7 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     //Actions
     @IBAction func StartRecord(sender: AnyObject) {
        audioRecorder.record()
-        waveForm.waveColor = WAVE_COLOR_START_RECORD
+        waveForm.waveColor = UIColor.redColor()
        pressToRecordLabel.textColor = UIColor.clearColor()
 
         //Change button when held
