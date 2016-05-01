@@ -15,9 +15,21 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     
     var dum2 = 0
     
+    var dum3 = 0
+    
+    var dum4 = 0
+    
     var dummy = ""
     
     var dummy2 = ""
+    
+    var dummy3 = ""
+    
+    var arrayOfSongNames : [String] = []
+    
+    var arrayDummy : [String] = []
+    
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
     
     //Class constants
     let RECORD_BUTTON_IMAGE = UIImage.init(named: "RecordButtonImage.png")
@@ -157,7 +169,24 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         }))
         
         songAlert.addAction(UIAlertAction(title: "Add to previous song", style: .Default, handler: { (action) -> Void in
-            self.showPickerInActionSheet()
+            let docsDir = self.dirPaths[0]
+            do {
+                let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
+                if dir.count == 1 {
+                    let songListAlert = UIAlertController(title: "ERROR! ERROR!", message: "You Have Yet to Create a Song!", preferredStyle: .Alert)
+                    songListAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                        self.presentViewController(songAlert, animated: true, completion: nil)
+                    }))
+                    self.presentViewController(songListAlert, animated: true, completion: nil)
+                } else {
+                    self.showPickerInActionSheet()
+                }
+            } catch {
+                
+            }
+            
+
+
         }))
         
         self.presentViewController(songAlert, animated: true, completion: nil)
@@ -172,8 +201,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     }
     
     func getFileURL () -> NSURL {
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        
         let docsDir = dirPaths[0]
         let soundFilePath = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
         
@@ -184,7 +211,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     }
     
     func createSongDirectory () {
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let docsDir = dirPaths[0]
         let newDir = docsDir.stringByAppendingString("/"+dummy)
         do{
@@ -195,7 +221,6 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     }
     
     func createIdeaDirectory () {
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let docsDir = dirPaths[0]
         let newDir = docsDir.stringByAppendingString("/"+dummy+"/"+dummy2)
         do{
@@ -293,12 +318,73 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
         //add the toolbar to the alert controller
         alert.view.addSubview(toolView);
         
-        self.presentViewController(alert, animated: true, completion: nil);
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     func chooseSong(sender: UIButton){
         // Your code when select button is tapped
-        print("im working")
+        dummy3 = arrayDummy[dum3]
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        //create idea index
+        let ideaAlert = UIAlertController(title: "Name This Idea", message: "Enter an Idea Name", preferredStyle: .Alert)
+        ideaAlert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            
+        })
+        ideaAlert.addAction(UIAlertAction(title: "Save", style: .Default, handler: { (action) -> Void in
+            let textField = ideaAlert.textFields![0] as UITextField
+            let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let docsDir = dirPaths[0]
+            let newDir = docsDir.stringByAppendingString("/"+self.dummy3)
+            do{
+                let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(newDir)
+                //if idea name already exists
+                if dir.contains(textField.text!) {
+                    let ideaAlreadyExistsErrorAlert = UIAlertController(title: "Not so Fast!", message: "Idea Name Already Exists in Song", preferredStyle: .Alert)
+                    ideaAlreadyExistsErrorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                        self.dum2 = 0
+                        self.presentViewController(ideaAlert, animated: true, completion: nil)
+                    }))
+                    self.presentViewController(ideaAlreadyExistsErrorAlert, animated: true, completion: nil)
+                    self.dum2 = 1
+                }
+            } catch {
+                
+            }
+            self.dummy2 = textField.text!
+            if self.dummy2.containsString("/") {
+                let ideaNameErrorAlert = UIAlertController(title: "Not so Fast!", message: "Idea Name Cannot Contain a Forward Slash (/)", preferredStyle: .Alert)
+                ideaNameErrorAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) -> Void in
+                    self.dum2 = 0
+                    self.presentViewController(ideaAlert, animated: true, completion: nil)
+                }))
+                self.presentViewController(ideaNameErrorAlert, animated: true, completion: nil)
+                self.dum2 = 1
+            }
+            if self.dum2 == 0 {
+                let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+                let docsDir = dirPaths[0]
+                let newDir = docsDir.stringByAppendingString("/"+self.dummy3+"/"+self.dummy2)
+                do{
+                    try NSFileManager.defaultManager().createDirectoryAtPath(newDir, withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    
+                }
+                let oldDir = (docsDir as NSString).stringByAppendingPathComponent("sound.caf")
+                let newDir2 = docsDir.stringByAppendingString("/"+self.dummy3+"/"+self.dummy2+"/sound.caf")
+                do {
+                    try NSFileManager.defaultManager().moveItemAtPath(oldDir, toPath: newDir2)
+                } catch {
+                    
+                }
+            }
+        }))
+        ideaAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+            
+        }))
+        self.presentViewController(ideaAlert, animated: true, completion: nil)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -306,48 +392,40 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPl
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         do {
             let docsDir = dirPaths[0]
             let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
-            if directoryContents.contains("sound.caf"){
-                arrayOfSongNames = directoryContents
-                arrayOfSongNames.removeLast()
-            } else {
-                arrayOfSongNames = directoryContents
-            }
+            arrayOfSongNames = directoryContents
         } catch {
             
         }
             
-        return arrayOfSongNames.count
+        return (arrayOfSongNames.count-1)
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         do {
             let docsDir = dirPaths[0]
             let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
             if directoryContents.contains("sound.caf"){
-                arrayOfSongNames = directoryContents
-                arrayOfSongNames.removeLast()
+                arrayDummy = arrayOfSongNames.filter() {$0 != "sound.caf"}
             } else {
-                arrayOfSongNames = directoryContents
+                arrayDummy = directoryContents
             }
         } catch {
             
         }
 
-        return arrayOfSongNames[row]
+        return arrayDummy[row]
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //Do something if selected
+        dum3 = row
         
     }
     
     func cancelSelection(sender: UIButton){
-        print("Cancel")
         self.dismissViewControllerAnimated(true, completion: nil)
         // We dismiss the alert. Here you can add your additional code to execute when cancel is pressed
     }

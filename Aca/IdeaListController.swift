@@ -80,6 +80,7 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
     func preparePlayer () {
         do {
+            print(filenameToPlay)
             let soundFileURL = NSURL(fileURLWithPath: filenameToPlay)
             audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
         } catch {
@@ -97,7 +98,6 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
         let newDir1 = (newDir as NSString).stringByAppendingPathComponent(arrayOfSongs[indexPath.row])
         let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
         filenameToPlay = newDir2
-        print(filenameToPlay)
         preparePlayer()
         audioPlayer.play()
     }

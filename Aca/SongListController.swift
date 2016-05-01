@@ -51,7 +51,7 @@ class SongListController: UITableViewController {
             let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(docsDir)
             if directoryContents.contains("sound.caf"){
                 arrayOfSongNames = directoryContents
-                arrayOfSongNames.removeLast()
+                arrayOfSongNames = arrayOfSongNames.filter() {$0 != "sound.caf"}
             } else {
                 arrayOfSongNames = directoryContents
             }
