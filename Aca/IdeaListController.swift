@@ -80,7 +80,6 @@ class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
     func preparePlayer () {
         do {
-            print(filenameToPlay)
             let soundFileURL = NSURL(fileURLWithPath: filenameToPlay)
             audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
         } catch {

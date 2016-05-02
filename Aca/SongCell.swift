@@ -7,10 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
 
-class SongCell: UITableViewCell {
+class SongCell: UITableViewCell, AVAudioPlayerDelegate {
     
     let filemgr = NSFileManager.defaultManager()
+    
+    var audioPlayer: AVAudioPlayer!
+    
+    var arrayOfIdeas : [String] = []
+    
+    var dummy = ""
+    
+    var dummy1 = ""
+    
+    var dummy2 = ""
     
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
 
@@ -21,10 +32,53 @@ class SongCell: UITableViewCell {
     
     @IBOutlet weak var songName: UILabel!
 
+    @IBAction func PlayWholeSong(sender: AnyObject) {
+        getIdeaNames()
+        for index in 0...(arrayOfIdeas.count-1){
+            let newDir1 = (dummy1 as NSString).stringByAppendingPathComponent(arrayOfIdeas[index])
+            let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
+            do {
+                let soundFileURL = NSURL(fileURLWithPath: newDir2)
+                audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+            } catch {
+                
+            }
+            audioPlayer.delegate = self
+            audioPlayer.prepareToPlay()
+            audioPlayer.volume = 1.0
+            audioPlayer.play()
+        }
+        
+    }
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+//    func preparePlayer () {
+//        do {
+//            let soundFileURL = NSURL(fileURLWithPath: filenameToPlay)
+//            audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+//        } catch {
+//            
+//        }
+//        audioPlayer.delegate = self
+//        audioPlayer.prepareToPlay()
+//        audioPlayer.volume = 1.0
+//        
+//    }
+    
+    func getIdeaNames() {
+        let docsDir = dirPaths[0]
+        dummy = songName.text!
+        dummy1 = docsDir.stringByAppendingString("/"+dummy)
+        do {
+            let dir = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(dummy1)
+            arrayOfIdeas = dir
+        } catch {
+            
+        }
     }
 
 }

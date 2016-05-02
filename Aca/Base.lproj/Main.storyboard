@@ -31,6 +31,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuN-Of-sKo">
                                             <rect key="frame" x="16" y="15" width="30" height="30"/>
                                             <state key="normal" title="Play"/>
+                                            <connections>
+                                                <action selector="PlayWholeSong:" destination="Lqv-6O-azo" eventType="touchUpInside" id="D2X-Pg-pK6"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
