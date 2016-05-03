@@ -7,9 +7,10 @@
 //
 
 import UIKit
-var arrayOfSongNames : [String] = []
 
 class SongListController: UITableViewController {
+    
+    var arrayOfSongNames : [String] = []
     
     var index = 0    
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)

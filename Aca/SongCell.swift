@@ -21,6 +21,8 @@ class SongCell: UITableViewCell, AVAudioPlayerDelegate {
     
     var dummy2 = ""
     
+    var dum1 = 0
+    
     let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
 
     override func awakeFromNib() {
@@ -32,21 +34,43 @@ class SongCell: UITableViewCell, AVAudioPlayerDelegate {
 
     @IBAction func PlayWholeSong(sender: AnyObject) {
         getIdeaNames()
-        for index in 0...(arrayOfIdeas.count-1){
-            let newDir1 = (dummy1 as NSString).stringByAppendingPathComponent(arrayOfIdeas[index])
-            let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
-            do {
-                let soundFileURL = NSURL(fileURLWithPath: newDir2)
-                let dumdum = try AVAudioPlayer.init(contentsOfURL: soundFileURL)
-                arrayOfAudios.append(dumdum)
-            } catch {
+        if dum1 == 0 {
+            for index in 0...(arrayOfIdeas.count-1){
+                sender.setTitleColor(UIColor.redColor(), forState: .Normal)
+                sender.setTitle("Stop", forState: .Normal)
+                let newDir1 = (dummy1 as NSString).stringByAppendingPathComponent(arrayOfIdeas[index])
+                let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
+                do {
+                    let soundFileURL = NSURL(fileURLWithPath: newDir2)
+                    let dumdum = try AVAudioPlayer.init(contentsOfURL: soundFileURL)
+                    arrayOfAudios.append(dumdum)
+                } catch {
                 
+                }
+                arrayOfAudios[index].delegate = self
+                arrayOfAudios[index].prepareToPlay()
+                arrayOfAudios[index].numberOfLoops = 20
+                arrayOfAudios[index].volume = 1.0
+                arrayOfAudios[index].play()
+                dum1 = 1
             }
-            arrayOfAudios[index].delegate = self
-            arrayOfAudios[index].prepareToPlay()
-            arrayOfAudios[index].volume = 1.0
-            arrayOfAudios[index].play()
-            
+        } else if dum1 == 1 {
+            sender.setTitleColor(UIColor.blueColor(), forState: .Normal)
+            sender.setTitle("Play", forState: .Normal)
+            for index in 0...(arrayOfIdeas.count-1) {
+                let newDir1 = (dummy1 as NSString).stringByAppendingPathComponent(arrayOfIdeas[index])
+                let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
+                do {
+                    let soundFileURL = NSURL(fileURLWithPath: newDir2)
+                    let dumdum = try AVAudioPlayer.init(contentsOfURL: soundFileURL)
+                    arrayOfAudios.append(dumdum)
+                } catch {
+                    
+                }
+                arrayOfAudios[index].stop()
+                arrayOfAudios[index].currentTime = 0
+            }
+            dum1 = 0
         }
         
     }
