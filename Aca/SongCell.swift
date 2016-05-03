@@ -11,11 +11,9 @@ import AVFoundation
 
 class SongCell: UITableViewCell, AVAudioPlayerDelegate {
     
-    let filemgr = NSFileManager.defaultManager()
-    
-    var audioPlayer: AVAudioPlayer!
-    
     var arrayOfIdeas : [String] = []
+    
+    var arrayOfAudios = [AVAudioPlayer!]()
     
     var dummy = ""
     
@@ -39,14 +37,16 @@ class SongCell: UITableViewCell, AVAudioPlayerDelegate {
             let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
             do {
                 let soundFileURL = NSURL(fileURLWithPath: newDir2)
-                audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+                let dumdum = try AVAudioPlayer.init(contentsOfURL: soundFileURL)
+                arrayOfAudios.append(dumdum)
             } catch {
                 
             }
-            audioPlayer.delegate = self
-            audioPlayer.prepareToPlay()
-            audioPlayer.volume = 1.0
-            audioPlayer.play()
+            arrayOfAudios[index].delegate = self
+            arrayOfAudios[index].prepareToPlay()
+            arrayOfAudios[index].volume = 1.0
+            arrayOfAudios[index].play()
+            
         }
         
     }
@@ -55,19 +55,6 @@ class SongCell: UITableViewCell, AVAudioPlayerDelegate {
 
         // Configure the view for the selected state
     }
-    
-//    func preparePlayer () {
-//        do {
-//            let soundFileURL = NSURL(fileURLWithPath: filenameToPlay)
-//            audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
-//        } catch {
-//            
-//        }
-//        audioPlayer.delegate = self
-//        audioPlayer.prepareToPlay()
-//        audioPlayer.volume = 1.0
-//        
-//    }
     
     func getIdeaNames() {
         let docsDir = dirPaths[0]
