@@ -7,26 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61066F6A1CA32DCF0031EF4A /* SongListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F691CA32DCF0031EF4A /* SongListTableViewController.swift */; };
+		31AD493C1CB335F800FF13D2 /* SongListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD493B1CB335F800FF13D2 /* SongListController.swift */; };
+		31AD493E1CB3361D00FF13D2 /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD493D1CB3361D00FF13D2 /* SongCell.swift */; };
+		31AD49401CB3371900FF13D2 /* IdeaListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD493F1CB3371900FF13D2 /* IdeaListController.swift */; };
+		31AD49421CB337A400FF13D2 /* IdeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49411CB337A400FF13D2 /* IdeaCell.swift */; };
+		31AD49441CB4581D00FF13D2 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AD49431CB4581D00FF13D2 /* LibraryController.swift */; };
 		61066F6C1CA32EA30031EF4A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */; };
-		61066F701CA332030031EF4A /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F6F1CA332030031EF4A /* Song.swift */; };
-		6108EB8E1CA329650077CCC3 /* StopRecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */; };
 		613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613CEA231C9A07D80079CA56 /* AppDelegate.swift */; };
 		613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA271C9A07D80079CA56 /* Main.storyboard */; };
 		613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2A1C9A07D80079CA56 /* Assets.xcassets */; };
 		613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */; };
 		617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617481D81C9F8D1D005E14F9 /* RecordViewController.swift */; };
-		61AB6BEF1CA73035004464E7 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BEE1CA73035004464E7 /* Collection.swift */; };
-		61AB6BF11CA73D1A004464E7 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BF01CA73D1A004464E7 /* Idea.swift */; };
-		61AB6BF31CA75110004464E7 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AB6BF21CA75110004464E7 /* Recorder.swift */; };
-		61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */; };
+		61BDCE1F1CD01A930008A83F /* SCSiriWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */; };
+		61E48E1B1CD42F7E0080602B /* StopRecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E48E191CD42F7E0080602B /* StopRecordButtonImage.png */; };
+		61E48E1C1CD42F7E0080602B /* RecordButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 61E48E1A1CD42F7E0080602B /* RecordButtonImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		61066F691CA32DCF0031EF4A /* SongListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListTableViewController.swift; sourceTree = "<group>"; };
+		31AD493B1CB335F800FF13D2 /* SongListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListController.swift; sourceTree = "<group>"; };
+		31AD493D1CB3361D00FF13D2 /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
+		31AD493F1CB3371900FF13D2 /* IdeaListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaListController.swift; sourceTree = "<group>"; };
+		31AD49411CB337A400FF13D2 /* IdeaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaCell.swift; sourceTree = "<group>"; };
+		31AD49431CB4581D00FF13D2 /* LibraryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
 		61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		61066F6F1CA332030031EF4A /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Song.swift; path = ../Song.swift; sourceTree = "<group>"; };
-		6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StopRecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/StopRecordButtonImage/StopRecordButtonImage.png"; sourceTree = "<group>"; };
+		611F83F81CD019A5001CAE3C /* Aca-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aca-Bridging-Header.h"; sourceTree = "<group>"; };
 		613CEA201C9A07D80079CA56 /* Aca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613CEA231C9A07D80079CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		613CEA281C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,10 +38,10 @@
 		613CEA2D1C9A07D80079CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		613CEA2F1C9A07D80079CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617481D81C9F8D1D005E14F9 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		61AB6BEE1CA73035004464E7 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		61AB6BF01CA73D1A004464E7 /* Idea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
-		61AB6BF21CA75110004464E7 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
-		61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RecordButtonImage.png; path = "../../../Desktop/CS 506/AcaApp/RecordButtonImage/RecordButtonImage.png"; sourceTree = "<group>"; };
+		61BDCE1D1CD01A930008A83F /* SCSiriWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSiriWaveformView.h; sourceTree = "<group>"; };
+		61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSiriWaveformView.m; sourceTree = "<group>"; };
+		61E48E191CD42F7E0080602B /* StopRecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StopRecordButtonImage.png; sourceTree = "<group>"; };
+		61E48E1A1CD42F7E0080602B /* RecordButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecordButtonImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,6 @@
 		613CEA171C9A07D80079CA56 = {
 			isa = PBXGroup;
 			children = (
-				31AD49391CB32B8900FF13D2 /* TableViewController.swift */,
 				613CEA221C9A07D80079CA56 /* Aca */,
 				613CEA211C9A07D80079CA56 /* Products */,
 			);
@@ -71,24 +74,23 @@
 		613CEA221C9A07D80079CA56 /* Aca */ = {
 			isa = PBXGroup;
 			children = (
-				6108EB8D1CA329650077CCC3 /* StopRecordButtonImage.png */,
-				61B9DF041C9C1A2B00541940 /* RecordButtonImage.png */,
+				61E48E191CD42F7E0080602B /* StopRecordButtonImage.png */,
+				61E48E1A1CD42F7E0080602B /* RecordButtonImage.png */,
+				61BDCE1D1CD01A930008A83F /* SCSiriWaveformView.h */,
+				61BDCE1E1CD01A930008A83F /* SCSiriWaveformView.m */,
 				613CEA231C9A07D80079CA56 /* AppDelegate.swift */,
 				613CEA271C9A07D80079CA56 /* Main.storyboard */,
-				31AD49371CB0AE5D00FF13D2 /* IdeaListController.swift */,
-				31AD49351CB0AE3700FF13D2 /* IdeaCell.swift */,
-				31AD49331CB0A58D00FF13D2 /* SongCell.swift */,
-				31AD49311CB0A52600FF13D2 /* SongListController.swift */,
+				31AD49431CB4581D00FF13D2 /* LibraryController.swift */,
+				31AD49411CB337A400FF13D2 /* IdeaCell.swift */,
+				31AD493F1CB3371900FF13D2 /* IdeaListController.swift */,
+				31AD493D1CB3361D00FF13D2 /* SongCell.swift */,
+				31AD493B1CB335F800FF13D2 /* SongListController.swift */,
 				613CEA2A1C9A07D80079CA56 /* Assets.xcassets */,
 				613CEA2C1C9A07D80079CA56 /* LaunchScreen.storyboard */,
 				613CEA2F1C9A07D80079CA56 /* Info.plist */,
 				617481D81C9F8D1D005E14F9 /* RecordViewController.swift */,
-				61066F6F1CA332030031EF4A /* Song.swift */,
-				61066F691CA32DCF0031EF4A /* SongListTableViewController.swift */,
 				61066F6B1CA32EA30031EF4A /* SettingsTableViewController.swift */,
-				61AB6BEE1CA73035004464E7 /* Collection.swift */,
-				61AB6BF01CA73D1A004464E7 /* Idea.swift */,
-				61AB6BF21CA75110004464E7 /* Recorder.swift */,
+				611F83F81CD019A5001CAE3C /* Aca-Bridging-Header.h */,
 			);
 			path = Aca;
 			sourceTree = "<group>";
@@ -119,7 +121,7 @@
 		613CEA181C9A07D80079CA56 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Umair Sharif";
 				TargetAttributes = {
@@ -152,10 +154,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6108EB8E1CA329650077CCC3 /* StopRecordButtonImage.png in Resources */,
+				61E48E1B1CD42F7E0080602B /* StopRecordButtonImage.png in Resources */,
 				613CEA2E1C9A07D80079CA56 /* LaunchScreen.storyboard in Resources */,
+				61E48E1C1CD42F7E0080602B /* RecordButtonImage.png in Resources */,
 				613CEA2B1C9A07D80079CA56 /* Assets.xcassets in Resources */,
-				61B9DF051C9C1A2B00541940 /* RecordButtonImage.png in Resources */,
 				613CEA291C9A07D80079CA56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,14 +169,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61AB6BF11CA73D1A004464E7 /* Idea.swift in Sources */,
 				61066F6C1CA32EA30031EF4A /* SettingsTableViewController.swift in Sources */,
-				61066F6A1CA32DCF0031EF4A /* SongListTableViewController.swift in Sources */,
+				31AD49441CB4581D00FF13D2 /* LibraryController.swift in Sources */,
 				613CEA241C9A07D80079CA56 /* AppDelegate.swift in Sources */,
-				61AB6BEF1CA73035004464E7 /* Collection.swift in Sources */,
+				31AD493E1CB3361D00FF13D2 /* SongCell.swift in Sources */,
+				31AD49401CB3371900FF13D2 /* IdeaListController.swift in Sources */,
+				61BDCE1F1CD01A930008A83F /* SCSiriWaveformView.m in Sources */,
 				617481D91C9F8D1D005E14F9 /* RecordViewController.swift in Sources */,
-				61066F701CA332030031EF4A /* Song.swift in Sources */,
-				61AB6BF31CA75110004464E7 /* Recorder.swift in Sources */,
+				31AD493C1CB335F800FF13D2 /* SongListController.swift in Sources */,
+				31AD49421CB337A400FF13D2 /* IdeaCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,10 +288,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Aca/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.umair.Aca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Aca/Aca-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -296,10 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Aca/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.umair.Aca;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Aca/Aca-Bridging-Header.h";
 			};
 			name = Release;
 		};

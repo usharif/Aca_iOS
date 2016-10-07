@@ -2,7 +2,7 @@
 //  IdeaCell.swift
 //  Aca
 //
-//  Created by patron on 4/2/16.
+//  Created by patron on 4/4/16.
 //  Copyright © 2016 Umair Sharif. All rights reserved.
 //
 
@@ -14,9 +14,9 @@ class IdeaCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    @IBOutlet weak var ideaName: UILabel!
 
+    @IBOutlet weak var ideaName: UILabel!
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

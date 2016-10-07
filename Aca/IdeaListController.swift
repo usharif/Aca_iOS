@@ -2,15 +2,24 @@
 //  IdeaListController.swift
 //  Aca
 //
-//  Created by patron on 4/2/16.
+//  Created by patron on 4/4/16.
 //  Copyright © 2016 Umair Sharif. All rights reserved.
 //
 
 import UIKit
+import AVFoundation
 
-class IdeaListController: UITableViewController {
+class IdeaListController: UITableViewController, AVAudioPlayerDelegate {
     
-    var ideaList : [String] = ["Idea 1","Idea 2","Idea 3"]
+    var filenameToPlay = ""
+    
+    var audioPlayer: AVAudioPlayer!
+    
+    var song = ""
+    
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+    
+    var arrayOfSongs : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +29,7 @@ class IdeaListController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.refreshControl?.addTarget(self, action: #selector(IdeaListController.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +46,17 @@ class IdeaListController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ideaList.count
+        
+        do {
+            let docsDir = dirPaths[0]
+            let newDir = docsDir.stringByAppendingString("/"+song)
+            let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(newDir)
+            arrayOfSongs = directoryContents
+        } catch {
+            
+        }
+        
+        return arrayOfSongs.count
     }
 
     
@@ -45,9 +65,40 @@ class IdeaListController: UITableViewController {
 
         // Configure the cell...
         
-        cell.ideaName.text = ideaList[indexPath.row]
+        cell.ideaName.text = arrayOfSongs[indexPath.row]
 
         return cell
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    func preparePlayer () {
+        do {
+            let soundFileURL = NSURL(fileURLWithPath: filenameToPlay)
+            audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+        } catch {
+            
+        }
+        audioPlayer.delegate = self
+        audioPlayer.prepareToPlay()
+        audioPlayer.volume = 1.0
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let docsDir = dirPaths[0]
+        let newDir = docsDir.stringByAppendingString("/"+song)
+        let newDir1 = (newDir as NSString).stringByAppendingPathComponent(arrayOfSongs[indexPath.row])
+        let newDir2 = (newDir1 as NSString).stringByAppendingPathComponent("sound.caf")
+        filenameToPlay = newDir2
+        preparePlayer()
+        audioPlayer.play()
     }
     
 
